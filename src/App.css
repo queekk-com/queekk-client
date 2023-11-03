@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.btn {
+
+}
+
+.btn:disabled {
+
+}
+
+@media (hover: hover) {
+  .btn:hover {
+
+  }
+}
