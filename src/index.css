@@ -1,7 +1,12 @@
 :root {
   /* COLORS */
-  --primary-color: ;
-  --secondary-color: ;
+  /* DARK MODE */
+  --primary-color: #25c2a0;
+  --secondary-color: #333333;
+
+  /* LIGHT MODE */
+  --primary-color-light: #25c2a0;
+  --secondary-color-light: #f5f5f5;
   
   /* FONTS */
   --primary-font: ;
