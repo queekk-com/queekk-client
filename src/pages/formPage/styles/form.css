@@ -1,0 +1,82 @@
+.form {
+    width: 100%;
+}
+
+.formLogo {
+    width: 100%;
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+.formLogo h1 {
+    font-size: 35px;
+    color: var(--accentColor);
+}
+
+.formLogo img {
+    width: 180px;
+    height: 120px;
+    margin-left: -3rem;
+}
+
+.logCredentials {
+    width: 600px;
+    padding: 20px 2rem;
+    border-radius: 30px;
+    background-color: var(--secondaryColor);
+    margin: 0 auto 3rem;
+}
+
+.frmValue {
+    width: 100%;
+    row-gap: 1.5rem;
+}
+
+.frmValue, .frmCtrl, .terms {
+    display: flex;
+    flex-direction: column;
+}
+
+.frmCtrl {
+    color: #ffffff;
+    align-items: start;
+    row-gap: 10px;
+}
+
+.frmCtrl label {
+    font-size: var(--lapParagraph1);
+}
+
+.frmCtrl input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 0 10px;
+    font-size: 14px;
+    transition: border-color .7s ease-in-out, box-shadow .7s ease-in-out, transform .7s ease-in-out;
+
+}
+
+.frmCtrl input:focus {
+    box-shadow: 0 0 15px var(--accentColor);
+    border-color: var(--accentColor);
+    transform: scale(1.03);
+}
+
+.terms {
+    width: 100%;
+    margin-top: 2rem;
+    align-items: start;
+    color: #ffffff;
+    row-gap: 10px;
+}
+
+.frmBtn {
+    width: 100%;
+    margin-top: 1rem;
+}
