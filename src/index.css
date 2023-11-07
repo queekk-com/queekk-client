@@ -1,16 +1,21 @@
 :root {
   /* COLORS */
   /* DARK MODE */
-  --primary-color: #25c2a0;
-  --secondary-color: #333333;
+  --primaryColor: #050609;
+  --secondaryColor: #1A1D21;
+  --accentColor: #A048D1;
 
-  /* LIGHT MODE */
-  --primary-color-light: #25c2a0;
-  --secondary-color-light: #f5f5f5;
-  
   /* FONTS */
-  --primary-font: ;
-  --secondary-font: ;
+  --lapHead1: 30px;
+  --lapHead3: 20px;
+  --lapParagraph1: 18px;
+  --lapcta: 20px;
+
+  /* mobile size */
+  --head1: 30px;
+  --head3: 20px;
+  --paragraph1: 18px;
+  --cta: 20px;
 
   /* STYLES */
   --border-radius: 5px;
@@ -28,6 +33,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primaryColor);
 }
 
 code {

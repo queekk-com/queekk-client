@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
@@ -16,6 +17,7 @@
     "react-spinner": "^0.2.7",
     "react-toastify": "^9.1.3",
     "redux": "^4.2.1",
+    "three-globe": "^2.30.0",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -42,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/queekk-com/queekk-client.git",
+  "author": "Vegetablegito247 <Yoshimitsu247Kakarot@gmail.com>",
+  "license": "MIT"
 }

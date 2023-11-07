@@ -1,0 +1,97 @@
+nav,
+.navLinks,
+.navLogo,
+.navUl,
+.logAndSearch,
+.navUl li a,
+.logOrSign,
+.searchBtn  {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    padding: 0 3rem;
+    color: white;
+    background-color: var(--secondaryColor);
+}
+
+.navLinks {
+    column-gap: 3rem;
+    height: 100%;
+}
+
+.navLogo h3 {
+    font-size: var(--lapHead3);
+    color: var(--accentColor);
+}
+
+.navLogo img {
+    width: 100px;
+    height: 70px;
+    margin-left: -16px;
+}
+
+.navUl {
+    column-gap: 32px;
+}
+
+.navUl li {
+    list-style: none;
+    font-size: var(--lapParagraph1);
+    height: 100%;
+}
+
+.navUl li a {
+    column-gap: 10px;
+    height: 100%;
+    font-size: var(--lapParagraph1);
+    text-decoration: none;
+    color: #ffffff;
+    transition: .7s;
+}
+
+.navUl li a:hover {
+    color: var(--accentColor);
+}
+
+.logAndSearch {
+    column-gap: 1rem;
+}
+
+.logAndSearch input {
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.logOrSign {
+    column-gap: 10px;
+}
+
+.logOrSign button {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.logOrSign button:first-child {
+    border: 2px solid var(--accentColor);
+    background-color: var(--secondaryColor);
+}
+
+.logOrSign button:last-child {
+    background-color: var(--accentColor);
+}

@@ -1,0 +1,62 @@
+footer {
+    width: 100%;
+    background-color: var(--secondaryColor);
+    margin-top: 4rem;
+}
+
+.mainFoot {
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    column-gap: 10px;
+    padding: 3rem 3rem 4rem;
+}
+
+.listCont, .lists {
+    display: flex;
+    flex-direction: column;
+}
+
+.listCont {
+    row-gap: 1rem;
+    width: 100%;
+    text-align: start;
+}
+
+.listHead h3 {
+    font-size: var(--lapHead3);
+    color: #ffffff;
+}
+
+.lists {
+    row-gap: 10px;
+}
+
+.lists li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    line-height: 30px;
+}
+
+.lists li a  {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: var(--lapParagraph1);
+    transition: .7s;
+}
+
+.lists li a:hover {
+    color: var(--accentColor);
+}
+
+.bottomFoot {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    color: #ffffff;
+    background-color: var(--accentColor);
+}
+
+.bottomFoot p {
+    font-size: var(--lapParagraph1);
+}
