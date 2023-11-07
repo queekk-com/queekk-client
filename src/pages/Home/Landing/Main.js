@@ -1,7 +1,7 @@
 import React from 'react';
-import './style/main.css';
-import samp1 from '../images/landImg/example1.png';
-import samp2 from '../images/landImg/example2.png';
+import './Main.css';
+import samp1 from '../../../assets/images/landImg/example1.png';
+import samp2 from '../../../assets/images/landImg/example2.png';
 import { IoRocketSharp } from 'react-icons/io5';
 import { AiOutlineSafetyCertificate } from 'react-icons/ai';
 import { BiNetworkChart } from 'react-icons/bi'

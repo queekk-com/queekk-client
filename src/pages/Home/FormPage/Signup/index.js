@@ -1,9 +1,9 @@
 import React from 'react';
-import formLogo from '../../../components/images/logoImg/chatAi.png';
-import '../styles/form.css';
+import formLogo from '../../../../assets/svgs/logo.svg';
+import '../form.css';
 import  { Link } from 'react-router-dom';
 
-function SignUp() {
+function Signup() {
     return (
         <div className='signUp form'>
             <div className="formLogo">
@@ -43,4 +43,4 @@ function SignUp() {
     )
 }
 
-export default SignUp
+export default Signup

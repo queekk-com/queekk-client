@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/footer.css';
+import './Footer.css';
 
 function Footer() {
     return (
@@ -76,7 +75,7 @@ function Footer() {
             </div>
             <div className='bottomFoot'>
                 <p>
-                    Copyright © 2023 Socket.IO
+                    © 2023 Queekk. All rights reserved.
                 </p>
             </div>
         </footer>
