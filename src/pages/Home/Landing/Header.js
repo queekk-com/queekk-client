@@ -17,7 +17,8 @@ function Header() {
         <button>Get started</button>
         <button>Documentation</button>
       </div>
-      <Globe />
+      {/* GLOBE WAS COMMENTED DUE TO PERFORMANCE ISSUES */}
+      {/* <Globe /> */}
     </div>
   )
 }

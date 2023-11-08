@@ -106,6 +106,22 @@ input[type="checkbox"] {
     border: none;
     background-color: var(--accentColor);
     color: #ffffff;
+    transition: all .1s ease-in-out;
+}
+
+.frmBtn button:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.frmBtn button:active {
+    transform: scale(1.01);
+}
+
+.frmBtn button:disabled {
+    background-color: var(--gray-light);
+    color: var(--accentColor);
+    cursor: not-allowed;
 }
 
 .frmAlready {

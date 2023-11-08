@@ -1,11 +1,13 @@
-import { useEffect } from "react"
-import "./Globe.css"
-import * as THREE from 'three'
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import React, { useEffect, useRef } from "react";
+import "./Globe.css";
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'; // Use the correct path
 import gsap from "gsap";
 import worldAlphaMini from "./img/world_alpha_mini.jpg";
 
 const Globe = () => {
+    const containerRef = useRef(null);
+    const canvasRef = useRef(null);
 
     useEffect(() => {
         const vertex = `
@@ -26,6 +28,7 @@ const Globe = () => {
 
         }
         `;
+
         const fragment = `
         #ifdef GL_ES
         precision mediump float;
@@ -47,9 +50,6 @@ const Globe = () => {
         }
         `;
 
-        const container = document.querySelector('.globe__container');
-        const canvas    = document.querySelector('.globe__canvas');
-
         let
         sizes,
         scene,
@@ -68,45 +68,46 @@ const Globe = () => {
         grabbing;
 
         const setScene = () => {
+            const container = containerRef.current;
+            const canvas = canvasRef.current;
 
-        sizes = {
-            width:  container.offsetWidth,
-            height: container.offsetHeight
+            const sizes = {
+                width: container.offsetWidth,
+                height: container.offsetHeight
+            };
+
+            scene = new THREE.Scene();
+
+            camera = new THREE.PerspectiveCamera(30, sizes.width / sizes.height, 1, 1000);
+            camera.position.z = 100;
+
+            renderer = new THREE.WebGLRenderer({
+                canvas: canvas,
+                antialias: false,
+                alpha: true
+            });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            const pointLight = new THREE.PointLight(0x081b26, 17, 200);
+            pointLight.position.set(-50, 0, 60);
+            scene.add(pointLight);
+            scene.add(new THREE.HemisphereLight(0xffffbb, 0x080820, 1.5));
+
+            raycaster         = new THREE.Raycaster();
+            mouse             = new THREE.Vector2();
+            isIntersecting    = false;
+            minMouseDownFlag  = false;
+            mouseDown         = false;
+            grabbing          = false;
+
+            setControls();
+            setBaseSphere();
+            setShaderMaterial();
+            setMap();
+            resize();
+            listenTo();
+            render();
         };
-
-        scene = new THREE.Scene();
-
-        camera = new THREE.PerspectiveCamera(30, sizes.width / sizes.height, 1, 1000);
-        camera.position.z  = 100;
-        
-        renderer = new THREE.WebGLRenderer({
-            canvas:     canvas,
-            antialias:  false,
-            alpha:      true
-        });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-        const pointLight = new THREE.PointLight(0x081b26, 17, 200);
-        pointLight.position.set(-50, 0, 60);
-        scene.add(pointLight);
-        scene.add(new THREE.HemisphereLight(0xffffbb, 0x080820, 1.5));
-
-        raycaster         = new THREE.Raycaster();
-        mouse             = new THREE.Vector2();
-        isIntersecting    = false;
-        minMouseDownFlag  = false;
-        mouseDown         = false;
-        grabbing          = false;
-
-        setControls();
-        setBaseSphere();
-        setShaderMaterial();
-        setMap();
-        resize();
-        listenTo();
-        render();
-
-        }
 
         const setControls = () => {
 
@@ -153,226 +154,217 @@ const Globe = () => {
 
         const setMap = () => {
 
-        let   activeLatLon    = {};
-        const dotSphereRadius = 20;
+            let   activeLatLon    = {};
+            const dotSphereRadius = 20;
 
-        const readImageData = (imageData) => {
+            const readImageData = (imageData) => {
 
-            for(let i = 0, lon = -180, lat = 90; i < imageData.length; i += 4, lon++) {
+                for(let i = 0, lon = -180, lat = 90; i < imageData.length; i += 4, lon++) {
 
-            if(!activeLatLon[lat]) activeLatLon[lat] = [];
+                if(!activeLatLon[lat]) activeLatLon[lat] = [];
 
-            const red   = imageData[i];
-            const green = imageData[i + 1];
-            const blue  = imageData[i + 2];
+                const red   = imageData[i];
+                const green = imageData[i + 1];
+                const blue  = imageData[i + 2];
 
-            if(red > 100 && green > 100 && blue > 100)
-                activeLatLon[lat].push(lon);
+                if(red > 100 && green > 100 && blue > 100)
+                    activeLatLon[lat].push(lon);
 
-            if(lon === 180) {
-                lon = -180;
-                lat--;
-            }
-
-            }
-
-        }
-
-        const visibilityForCoordinate = (lon, lat) => {
-
-            let visible = false;
-
-            if(!activeLatLon[lat].length) return visible;
-
-            const closest = activeLatLon[lat].reduce((prev, curr) => {
-            return (Math.abs(curr - lon) < Math.abs(prev - lon) ? curr : prev);
-            });
-
-            if(Math.abs(lon - closest) < 0.5) visible = true;
-
-            return visible;
-
-        }
-
-        const calcPosFromLatLonRad = (lon, lat) => {
-        
-            var phi   = (90 - lat)  * (Math.PI / 180);
-            var theta = (lon + 180) * (Math.PI / 180);
-
-            const x = -(dotSphereRadius * Math.sin(phi) * Math.cos(theta));
-            const z = (dotSphereRadius * Math.sin(phi) * Math.sin(theta));
-            const y = (dotSphereRadius * Math.cos(phi));
-        
-            return new THREE.Vector3(x, y, z);
-
-        }
-
-        const createMaterial = (timeValue) => {
-
-            const mat                 = material.clone();
-            mat.uniforms.u_time.value = timeValue * Math.sin(Math.random());
-            materials.push(mat);
-            return mat;
-
-        }
-
-        const setDots = () => {
-
-            const dotDensity  = 2.5;
-            let   vector      = new THREE.Vector3();
-
-            for (let lat = 90, i = 0; lat > -90; lat--, i++) {
-
-                const radius = Math.cos(Math.abs(lat) * (Math.PI / 180)) * dotSphereRadius;
-                const circumference = radius * Math.PI * 2;
-                const dotsForLat = circumference * dotDensity;
-
-                for (let x = 0; x < dotsForLat; x++) {
-
-                    const long = -180 + x * 360 / dotsForLat;
-
-                    if (!visibilityForCoordinate(long, lat)) continue;
-
-                    vector = calcPosFromLatLonRad(long, lat);
-
-                    const dotGeometry = new THREE.CircleGeometry(0.1, 5);
-                    dotGeometry.lookAt(vector);
-                    dotGeometry.translate(vector.x, vector.y, vector.z);
-
-                    const m     = createMaterial(i);
-                    const mesh  = new THREE.Mesh(dotGeometry, m);
-
-                    scene.add(mesh);
+                if(lon === 180) {
+                    lon = -180;
+                    lat--;
+                }
 
                 }
+
             }
-        }
-        
-        const image   = new Image();
-        image.onload  = () => {
 
-            image.needsUpdate  = true;
+            const visibilityForCoordinate = (lon, lat) => {
 
-            const imageCanvas  =  document.createElement('canvas');
-            imageCanvas.width  =  image.width;
-            imageCanvas.height =  image.height;
+                let visible = false;
+
+                if(!activeLatLon[lat].length) return visible;
+
+                const closest = activeLatLon[lat].reduce((prev, curr) => {
+                return (Math.abs(curr - lon) < Math.abs(prev - lon) ? curr : prev);
+                });
+
+                if(Math.abs(lon - closest) < 0.5) visible = true;
+
+                return visible;
+
+            }
+
+            const calcPosFromLatLonRad = (lon, lat) => {
             
-            const context = imageCanvas.getContext('2d');
-            context.drawImage(image, 0, 0);
-            
-            const imageData = context.getImageData(0, 0, imageCanvas.width, imageCanvas.height);
-            readImageData(imageData.data);
+                var phi   = (90 - lat)  * (Math.PI / 180);
+                var theta = (lon + 180) * (Math.PI / 180);
 
-            setDots();
+                const x = -(dotSphereRadius * Math.sin(phi) * Math.cos(theta));
+                const z = (dotSphereRadius * Math.sin(phi) * Math.sin(theta));
+                const y = (dotSphereRadius * Math.cos(phi));
             
-        }
+                return new THREE.Vector3(x, y, z);
 
-        image.src = worldAlphaMini;
+            }
+
+            const createMaterial = (timeValue) => {
+
+                const mat                 = material.clone();
+                mat.uniforms.u_time.value = timeValue * Math.sin(Math.random());
+                materials.push(mat);
+                return mat;
+
+            }
+
+            const setDots = () => {
+
+                const dotDensity  = 2.5;
+                let   vector      = new THREE.Vector3();
+
+                for (let lat = 90, i = 0; lat > -90; lat--, i++) {
+
+                    const radius = Math.cos(Math.abs(lat) * (Math.PI / 180)) * dotSphereRadius;
+                    const circumference = radius * Math.PI * 2;
+                    const dotsForLat = circumference * dotDensity;
+
+                    for (let x = 0; x < dotsForLat; x++) {
+
+                        const long = -180 + x * 360 / dotsForLat;
+
+                        if (!visibilityForCoordinate(long, lat)) continue;
+
+                        vector = calcPosFromLatLonRad(long, lat);
+
+                        const dotGeometry = new THREE.CircleGeometry(0.1, 5);
+                        dotGeometry.lookAt(vector);
+                        dotGeometry.translate(vector.x, vector.y, vector.z);
+
+                        const m     = createMaterial(i);
+                        const mesh  = new THREE.Mesh(dotGeometry, m);
+
+                        scene.add(mesh);
+
+                    }
+                }
+            }
+            
+            const image   = new Image();
+            image.onload  = () => {
+
+                image.needsUpdate  = true;
+
+                const imageCanvas  =  document.createElement('canvas');
+                imageCanvas.width  =  image.width;
+                imageCanvas.height =  image.height;
+                
+                const context = imageCanvas.getContext('2d');
+                context.drawImage(image, 0, 0);
+                
+                const imageData = context.getImageData(0, 0, imageCanvas.width, imageCanvas.height);
+                readImageData(imageData.data);
+
+                setDots();
+                
+            }
+
+            image.src = worldAlphaMini;
 
         }
 
         const resize = () => {
+            const container = containerRef.current;
+            const sizes = {
+                width: container.offsetWidth,
+                height: container.offsetHeight
+            };
 
-        sizes = {
-            width:  container.offsetWidth,
-            height: container.offsetHeight
+            if (window.innerWidth > 700) {
+                camera.position.z = 100;
+            } else {
+                camera.position.z = 140;
+            }
+
+            camera.aspect = sizes.width / sizes.height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(sizes.width, sizes.height);
         };
 
-        if(window.innerWidth > 700) camera.position.z = 100;
-        else camera.position.z = 140;
-
-        camera.aspect = sizes.width / sizes.height;
-        camera.updateProjectionMatrix();
-
-        renderer.setSize(sizes.width, sizes.height);
-
-        }
-
         const mousemove = (event) => {
+            isIntersecting = false;
 
-        isIntersecting = false;
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-        raycaster.setFromCamera(mouse, camera);
-        
-        const intersects = raycaster.intersectObject(baseMesh);
-        if(intersects[0]) {
-            isIntersecting = true;
-            if(!grabbing) document.body.style.cursor = 'pointer';
-        }
-        else {
-            if(!grabbing) document.body.style.cursor = 'default';
-        }
-
-        }
+            raycaster.setFromCamera(mouse, camera);
+            
+            const intersects = raycaster.intersectObject(baseMesh);
+            if(intersects[0]) {
+                isIntersecting = true;
+                if(!grabbing) document.body.style.cursor = 'pointer';
+            }
+            else {
+                if(!grabbing) document.body.style.cursor = 'default';
+            }
+        };
 
         const mousedown = () => {
+            if(!isIntersecting) return;
 
-        if(!isIntersecting) return;
+            materials.forEach(el => {
+                gsap.to(el.uniforms.u_maxExtrusion, {value: 1.07});
+            });
 
-        materials.forEach(el => {
-            gsap.to(el.uniforms.u_maxExtrusion, {value: 1.07});
-        });
+            mouseDown         = true;
+            minMouseDownFlag  = false;
 
-        mouseDown         = true;
-        minMouseDownFlag  = false;
+            setTimeout(() => {
+                minMouseDownFlag = true;
+                if(!mouseDown) mouseup();
+            }, 500);
 
-        setTimeout(() => {
-            minMouseDownFlag = true;
-            if(!mouseDown) mouseup();
-        }, 500);
-
-        document.body.style.cursor  = 'grabbing';
-        grabbing                    = true;
-
-        }
+            document.body.style.cursor  = 'grabbing';
+            grabbing                    = true;
+        };
 
         const mouseup = () => {
-
-        mouseDown = false;
-        if(!minMouseDownFlag) return;
-
-        materials.forEach(el => {
-            gsap.to(el.uniforms.u_maxExtrusion, {value: 1.0, duration: 0.15});
-        });
-
-        grabbing  = false;
-        if(isIntersecting) document.body.style.cursor = 'pointer';
-        else document.body.style.cursor = 'default';
-
-        }
+            mouseDown = false;
+            if(!minMouseDownFlag) return;
+    
+            materials.forEach(el => {
+                gsap.to(el.uniforms.u_maxExtrusion, {value: 1.0, duration: 0.15});
+            });
+    
+            grabbing  = false;
+            if(isIntersecting) document.body.style.cursor = 'pointer';
+            else document.body.style.cursor = 'default';
+        };
 
         const listenTo = () => {
-
-        window.addEventListener('resize',     resize.bind(this));
-        window.addEventListener('mousemove',  mousemove.bind(this));
-        window.addEventListener('mousedown',  mousedown.bind(this));
-        window.addEventListener('mouseup',    mouseup.bind(this));
-
-        }
+            window.addEventListener('resize', resize);
+            window.addEventListener('mousemove', mousemove);
+            window.addEventListener('mousedown', mousedown);
+            window.addEventListener('mouseup', mouseup);
+        };
 
         const render = () => {
+            materials.forEach(el => {
+                el.uniforms.u_time.value += twinkleTime;
+            });
 
-        materials.forEach(el => {
-            el.uniforms.u_time.value += twinkleTime;
-        });
-
-        controls.update();
-        renderer.render(scene, camera);
-        requestAnimationFrame(render.bind(this))
-
-        }
+            controls.update();
+            renderer.render(scene, camera);
+            requestAnimationFrame(render);
+        };
 
         setScene();
     }, []);
 
-  return (
-    <div className="globe__container">
-      <canvas className="globe__canvas" />
-    </div>
-  )
-}
+    return (
+        <div className="globe__container" ref={containerRef}>
+            <canvas className="globe__canvas" ref={canvasRef} />
+        </div>
+    );
+};
 
 export default Globe;

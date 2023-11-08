@@ -2,6 +2,7 @@ import "./Nav.css";
 import logoImg from '../assets/svgs/logo.svg';
 import { NavLink } from 'react-router-dom';
 import { AiOutlineCaretDown } from 'react-icons/ai';
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -42,8 +43,8 @@ const Nav = () => {
                 <input type="search" id="" placeholder="Search" />
             </form>
             <div className="logOrSign">
-                <button>Log in</button>
-                <button>Sign up</button>
+                <Link to="/login">Log in</Link>
+                <Link to="/signup">Sign up</Link>
             </div>
         </div>
     </nav>
