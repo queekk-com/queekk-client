@@ -32,11 +32,14 @@ function Signup() {
                     </div>
                     <div className="frmTerm">
                         <input type="checkbox" />
-                        <span></span>
+                        <span>Notify me about new features and special offers.</span>
                     </div>
                 </div>
                 <div className="frmBtn">
                     <button>Sign up</button>
+                </div>
+                <div className="frmAlready">
+                    <span>Already have an account ? <Link>click here to Log-in</Link></span>
                 </div>
             </form>
         </div>

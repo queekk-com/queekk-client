@@ -4,11 +4,11 @@
 
 .formLogo {
     width: 100%;
-    margin-top: 4rem;
+    margin: 4rem 0 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 10px;
+    column-gap: 6px;
 }
 
 .formLogo h1 {
@@ -17,9 +17,8 @@
 }
 
 .formLogo img {
-    width: 180px;
-    height: 120px;
-    margin-left: -3rem;
+    width: 80px;
+    height: 60px;
 }
 
 .logCredentials {
@@ -35,7 +34,9 @@
     row-gap: 1.5rem;
 }
 
-.frmValue, .frmCtrl, .terms {
+.frmValue,
+.frmCtrl,
+.terms {
     display: flex;
     flex-direction: column;
 }
@@ -76,7 +77,57 @@
     row-gap: 10px;
 }
 
+.frmTerm {
+    flex: 0 0 calc(50% - 5px);
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.frmTerm span {
+    text-align: start;
+    font-size: 16px;
+}
+
 .frmBtn {
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 2rem;
+}
+
+.frmBtn button {
+    width: 180px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--accentColor);
+    color: #ffffff;
+}
+
+.frmAlready {
+    width: 100%;
+    text-align: start;
+    margin-top: 16px;
+    color: #ffffff;
+}
+
+.frmAlready span a, .frmTerm span a {
+    text-decoration: none;
+    color: var(--accentColor);
+}
+
+.formBg {
+    position: absolute;
+    
+    width: 800px;
+    height: 800px;
+}
+
+.formBg img {
+    width: 100%;
+    height: 100%;
 }

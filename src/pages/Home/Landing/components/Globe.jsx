@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import "./Globe.css"
-import * as THREE from 'three';
+import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import gsap from "gsap";
 import worldAlphaMini from "./img/world_alpha_mini.jpg";
@@ -76,7 +76,7 @@ const Globe = () => {
 
         scene = new THREE.Scene();
 
-        camera             = new THREE.PerspectiveCamera(30, sizes.width / sizes.height, 1, 1000);
+        camera = new THREE.PerspectiveCamera(30, sizes.width / sizes.height, 1, 1000);
         camera.position.z  = 100;
         
         renderer = new THREE.WebGLRenderer({
@@ -248,7 +248,7 @@ const Globe = () => {
             }
         }
         
-        const image   = new Image;
+        const image   = new Image();
         image.onload  = () => {
 
             image.needsUpdate  = true;
@@ -375,4 +375,4 @@ const Globe = () => {
   )
 }
 
-export default Globe
+export default Globe;
