@@ -29,7 +29,7 @@ function Signup() {
         if (!terms) return toast.error("You must agree to the terms and conditions");
         try {
             setLoading(true);
-            const response = await fetch('http://localhost/auth/signup', {
+            const response = await fetch(`${process.env.REACT_APP_SERVER}/auth/signup`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password, passwordConfirmation })

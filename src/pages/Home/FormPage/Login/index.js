@@ -22,7 +22,7 @@ const Login = () => {
     if (!password) return toast.error("Password is required");
     try {
       setLoading(true);
-      const response = await fetch('http://localhost/auth/login', {
+      const response = await fetch(`${process.env.REACT_APP_SERVER}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
