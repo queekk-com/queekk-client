@@ -4,8 +4,7 @@ nav,
 .navUl,
 .logAndSearch,
 .navUl li a,
-.logOrSign,
-.searchBtn  {
+.logOrSign {
     display: flex;
     align-items: center;
 }
@@ -51,6 +50,14 @@ nav {
     column-gap: 32px;
 }
 
+.closeBar {
+    display: none;
+}
+
+.sideCont {
+    display: none;
+}
+
 .navUl li {
     list-style: none;
     font-size: var(--lapParagraph1);
@@ -70,8 +77,20 @@ nav {
     color: var(--accentColor);
 }
 
+.side {
+    display: none;
+}
+
 .logAndSearch {
     column-gap: 1rem;
+}
+
+.searchCont {
+    width: fit-content;
+}
+
+.searchBtn {
+    display: flex;
 }
 
 .logAndSearch input {
@@ -81,6 +100,10 @@ nav {
     outline: none;
     border: none;
     padding-inline: 4px;
+}
+
+.searchTxt {
+    display: none;
 }
 
 .logOrSign {
@@ -111,4 +134,150 @@ nav {
 
 .logOrSign a:last-child {
     background-color: var(--accentColor);
+}
+
+.burger {
+    display: none;
+}
+
+.searchIcon {
+    display: none;
+}
+
+@media (max-width: 575px) {
+    nav {
+        padding: 30px;
+    }
+
+    .navLinks {
+        justify-content: space-between;
+    }
+
+    .closeBar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        margin: .7rem 0 0 auto;
+        background-color: var(--accentColor);
+        color: #ffffff;
+    }
+
+    .navUl.active {
+        left: 0;
+    }
+
+    .navUl {
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        width: 70vw;
+        height: 100vh;
+        z-index: 5;
+        background-color: var(--secondaryColor);
+        transition: left ease-in-out .7s;
+        padding: 1rem 1rem 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navUl li {
+        height: auto;
+        line-height: 70px;
+    }
+
+    .searchCont.active, .sideCont.active {
+        left: 0;
+    }
+
+    .searchCont, .sideCont {
+        position: fixed;
+        left: -100vw;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #1a1d216c;
+        transition: left ease .7s;
+    }
+
+    .sideCont {
+        display: flex;
+    }
+
+    .searchCont {
+        padding: 0 2rem;
+    }
+
+    .searchCont, .searchBtn {
+        display: flex;
+    }
+
+    .searchBtn {
+        width: 100%;
+        flex-direction: column;
+        row-gap: 1rem;
+        height: fit-content;
+        position: relative;
+        top: 70px;
+        border-radius: 10px;
+        padding: 20px 10px;
+        background-color: var(--secondaryColor);
+    }
+
+    .searchTxt {
+        display: block;
+        font-size: var(--paragraph1);
+    }
+
+    .logAndSearch input {
+        width: 100%;
+        height: 50px;
+        border: 2px solid var(--accentColor);
+    }
+
+    .searchIcon {
+        color: var(--accentColor);
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    .searchIcon span {
+        font-size: var(--paragraph1);
+        color: #ffffff;
+    }
+
+    .burger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: var(--accentColor);
+    }
+
+    .logOrSign {
+        display: none;
+    }
+
+    .side {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        width: 100%;
+    }
+
+    .side a {
+        width: 100%;
+    }
+}
+
+@media (max-width: 375px) {
+    nav {
+        padding: 10px;
+    }
 }

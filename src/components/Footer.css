@@ -60,3 +60,32 @@ footer {
 .bottomFoot p {
     font-size: var(--lapParagraph1);
 }
+
+@media (max-width: 575px) {
+    .mainFoot {
+        grid-template-columns: 6fr 6fr;
+        row-gap: 3rem;
+        padding: 3rem 30px 4rem;
+    }
+}
+
+@media (max-width: 428px) {
+    .mainFoot {
+        grid-template-columns: 12fr;
+    }
+
+    .listHead h3 {
+        font-size: var(--head3);
+    }
+
+    .lists li a,
+    .bottomFoot p {
+        font-size: var(--cta);
+    }
+}
+
+@media (max-width: 375px) {
+    .mainFoot {
+        padding: 2rem 10px 3rem;
+    }
+}

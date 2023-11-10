@@ -70,3 +70,60 @@
     width: 100%;
     height: 100%;
 }
+
+@media (max-width: 575px) {
+    .landMain {
+        padding: 0 30px;
+    }
+
+    .benMain {
+        grid-template-columns: 12fr;
+        row-gap: 3rem;
+    }
+
+    .sampMain {
+        display: grid;
+        grid-template-columns: 12fr;
+    }
+
+    .samps {
+        width: 100%;
+    }
+
+    .samps:last-child {
+        margin-top: -3rem;
+    }
+}
+
+@media (max-width: 428px) {
+    .landMain {
+        padding: 0 20px;
+    }
+
+    .description,
+    .benefits,
+    .samples {
+        margin-top: 4rem;
+    }
+
+    .description h1,
+    .benHead h1,
+    .sampHead h1 {
+        font-size: var(--head1);
+    }
+
+    .description p,
+    .ben p {
+        font-size: var(--paragraph1);
+    }
+
+     .ben h3 {
+        font-size: var(--head3);
+    }
+}
+
+@media (max-width: 375px) {
+    .landMain {
+        padding: 0 10px;
+    }
+}

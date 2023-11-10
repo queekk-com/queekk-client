@@ -64,3 +64,54 @@
 .headBtn button:first-child {
     background-color: var(--accentColor);
 }
+
+@media (max-width: 575px) {
+    .landHead {
+        padding: .7rem 30px 0;
+    }
+
+    .landHead .logo__container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .landHead h1 {
+        font-size: 40px;
+        margin-top: 1.5rem;
+    }
+
+    .landHead p {
+        width: 100%;
+    }
+}
+
+@media (max-width: 428px) {
+    .landHead {
+        padding: 0 20px 0;
+        min-height: 420px;
+    }
+
+    .landHead .logo__container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .landHead h1 {
+        font-size: var(--head1);
+    }
+
+    .landHead p {
+        font-size: var(--paragraph1);
+    }
+
+    .headBtn button {
+        width: 150px;
+        font-size: var(--cta);
+    }
+}
+
+@media (max-width: 375px) {
+    .landHead {
+        padding: .7rem 10px 0;
+    }
+}
