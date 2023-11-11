@@ -32,7 +32,7 @@ const Nav = () => {
                 </div>
 
                 <div onClick={handleSideBar} className={openSideBar ? "sideCont active" : "sideCont"}></div>
-                
+
                 <ul className={openSideBar ? "navUl active" : "navUl"}>
                     <div onClick={handleSideBar} className="closeBar">
                         <span>X</span>
@@ -65,12 +65,11 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="logAndSearch">
-                <div onClick={handleSearch} className={openSearch ? "searchCont active" : "searchCont"}>
-                    <form action="" className="searchBtn">
-                        <input type="search" id="" placeholder="Search" />
-                        <span className="searchTxt">No recent searches</span>
-                    </form>
-                </div>
+                <div onClick={handleSearch} className={openSearch ? "searchCont active" : "searchCont"}></div>
+                <form action="" className={openSearch ? "searchBtn active" : "searchBtn"}>
+                    <input type="search" id="" placeholder="Search" />
+                    <span className="searchTxt">No recent searches</span>
+                </form>
                 <div className="logOrSign">
                     <Link to="/login">Log in</Link>
                     <Link to="/signup">Sign up</Link>
