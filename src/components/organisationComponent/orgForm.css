@@ -1,0 +1,71 @@
+.orgForm {
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--secondaryColor);
+    padding: 20px;
+    color: var(--txtColor);
+}
+
+.createOrgForm, .orgFrmCtrl, .sptCtrl, .sptDvd {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.createOrgForm {
+    width: 100%;
+    row-gap: 1.5rem;
+}
+
+.orgFrmCtrl, .sptCtrl {
+    row-gap: 10px;
+    width: 100%;
+    background-color: var(--dashColor);
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px 2rem;
+}
+
+.orgFrmCtrl input,
+.sptDvd .sptCtrl input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: 3px solid var(--accentColor);
+    border-radius: 10px;
+    padding: 0 10px;
+    font-size: 14px;
+    transition: border-color .7s ease-in-out, box-shadow .7s ease-in-out, transform .7s ease-in-out;
+}
+
+.orgFrmSptInfo {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    column-gap: 10px;
+    width: 100%;
+}
+
+.sptSngl, .sptDvd, .sptFrmCtrl {
+    width: 100%;
+}
+
+.sptCtrl {
+    height: fit-content;
+    width: 100%;
+}
+
+.sptDvd {
+    row-gap: 10px;
+}
+
+.sptDvd .sptCtrl:last-child input {
+    border: none;
+}
+
+.sptSngl textarea {
+    width: 100%;
+    height: 160px;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+}

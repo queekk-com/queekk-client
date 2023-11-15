@@ -1,0 +1,108 @@
+.msgContent,
+.msgOutlet {
+    width: 100%;
+    padding: 15px;
+}
+
+.message::-webkit-scrollbar-track {
+    padding: 2px 4px;
+    background-color: var(--secondaryColor);
+    border-radius: 5px;
+}
+
+.message::-webkit-scrollbar {
+    width: 8px;
+}
+
+.message::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--accentColor);
+    border: 1px solid #000;
+}
+
+.newMessages,
+.viewMessages {
+    width: 100%;
+    background-color: var(--secondaryColor);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.viewMessages {
+    margin-top: 2rem;
+}
+
+.newMsg,
+.viewMsg {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.newMsgHead,
+.viewMsgHead {
+    width: 100%;
+    text-align: start;
+    margin-bottom: 1.5rem;
+}
+
+.viewMsgHead,
+.newMsgHead {
+    display: flex;
+    justify-content: space-between;
+}
+
+.msgEdit {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    transition: color .7s, text ease .7s;
+    position: relative;
+}
+
+.editInfoMsg {
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 100%;
+    right: 2%;
+    z-index: 2;
+    box-shadow: 0 0 5px var(--accentColor);
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: column;
+}
+
+.editNewInfo {
+    width: 150px;
+}
+
+.editInfoMsg span {
+    line-height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 0 5px;
+    font-size: 14px;
+}
+
+.editInfoMsg span:hover {
+    background-color: var(--accentColor);
+    color: #ffffff;
+}
+
+.msgEdit:hover {
+    text-decoration: underline;
+    color: var(--accentColor);
+}
+
+.editMsg {
+    color: var(--accentColor);
+    font-size: 16px;
+}
+
+.msgVwd h3, .msgVwd p {
+    color: gray;
+}

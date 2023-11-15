@@ -1,6 +1,6 @@
 import headLogo from '../../../assets/svgs/logo.svg';
 import './Head.css';
-import Globe from './components/Globe';
+// import Globe from './components/Globe';
 
 function Header() {
 

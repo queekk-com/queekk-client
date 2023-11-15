@@ -4,8 +4,10 @@
   --primaryColor: #050609;
   --secondaryColor: #1A1D21;
   --accentColor: #A048D1;
+  --txtColor: #ffffff;
   --gray-light: #bebebe;
   --gray-dark: #919191;
+  --dashColor: #2f3033; 
 
   /* FONTS */
   --lapHead1: 30px;
@@ -21,6 +23,22 @@
 
   /* STYLES */
   --border-radius: 5px;
+}
+
+[data-theme='light'] {
+  /* --primaryColor: #ffffff;
+  --secondaryColor: #f0f0f0;
+  --txtColor: #000000;
+  --gray-light: #bfbfbf;
+  --gray-dark: #6e6e6e;
+  --dashColor: #e5e5e5; */
+  --primaryColor: #f5f5f5; /* Lighter background color */
+  --secondaryColor: #ffffff; /* White background */
+  --accentColor: #A048D1; /* Maintain the same accent color */
+  --txtColor: #000000;
+  --gray-light: #e1e1e1; /* Lighter shade of gray for UI elements */
+  --gray-dark: #a0a0a0; /* Darker shade of gray */
+  --dashColor: #f0f0f0;
 }
 
 * {

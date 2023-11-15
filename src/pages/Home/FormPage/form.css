@@ -42,7 +42,7 @@
 }
 
 .frmCtrl {
-    color: #ffffff;
+    color: var(--txtColor);
     align-items: start;
     row-gap: 10px;
 }
@@ -73,7 +73,7 @@
     width: 100%;
     margin-top: 2rem;
     align-items: start;
-    color: #ffffff;
+    color: var(--txtColor);
     row-gap: 10px;
 }
 
@@ -128,7 +128,7 @@ input[type="checkbox"] {
     width: 100%;
     text-align: start;
     margin-top: 16px;
-    color: #ffffff;
+    color: var(--txtColor);
 }
 
 .frmAlready span a, .frmTerm span a {

@@ -1,0 +1,85 @@
+.displayBoard,
+.sideMenu,
+.mainMenu,
+.mainMenu a,
+.account,
+.acctSettings,
+.acctSettings a,
+.acctIcon,
+.sideIcon,
+.acctHolder {
+    display: flex;
+}
+
+.acctIcon,
+.sideIcon,
+.acctHolder {
+    align-items: center;
+}
+
+.account,
+.mainMenu {
+    padding: 20px 10px;
+}
+
+.sideMenu,
+.mainMenu,
+.account,
+.acctSettings {
+    flex-direction: column;
+}
+
+.mainMenu, .acctSettings {
+    row-gap: 15px;
+}
+
+.sideMenu {
+    width: 16vw;
+    height: 100vh;
+    background-color: var(--secondaryColor);
+}
+
+.mainMenu a,
+.acctSettings a {
+    align-items: center;
+    column-gap: 10px;
+    text-decoration: none;
+    color: var(--txtColor);
+    line-height: 45px;
+    padding: 0 0 0 10px;
+    border-radius: 5px;
+    transition: ease .7s;
+    background-color: var(--dashColor);
+}
+
+.mainMenu a:hover,
+.acctSettings a:hover {
+    background-color: #2f30338e;
+    color: #ffffff;
+}
+
+.mainMenu a.active,
+.acctSettings a.active {
+    background-color: var(--accentColor);
+    color: #ffffff;
+}
+
+.account {
+    margin-top: auto;
+}
+
+.acctHolder {
+    justify-content: start;
+    margin-bottom: 1rem;
+    color: grey;
+    column-gap: 10px;
+    font-size: 12px;
+}
+
+.outlet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 84vw;
+    height: 100vh;
+}

@@ -1,0 +1,47 @@
+.viewUserMsg {
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--secondaryColor);
+    padding: 20px;
+    color: var(--txtColor);
+}
+
+.backMsg {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: var(--accentColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.viewMsgInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 2rem 0;
+}
+
+.viewHeadTime, .viewMainMsg {
+    text-align: start;
+}
+
+.viewHeadTime h3 {
+    font-size: 18px;
+}
+
+.viewHeadTime p {
+    font-size: 12px;
+    color: var(--accentColor);
+}
+
+.viewMainMsg {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 1rem;
+    background-color: var(--dashColor);
+}

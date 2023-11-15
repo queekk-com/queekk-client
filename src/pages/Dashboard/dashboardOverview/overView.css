@@ -1,0 +1,123 @@
+.overview::-webkit-scrollbar-track {
+    padding: 2px 4px;
+    background-color: var(--secondaryColor);
+    border-radius: 5px;
+}
+
+.overview::-webkit-scrollbar {
+    width: 8px;
+}
+
+.overview::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--accentColor);
+    border: 1px solid #000;
+}
+
+.overviewContent {
+    width: 100%;
+    padding: 15px;
+}
+
+.overOrgNdTkn, .overMsg {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    column-gap: 10px;
+}
+
+.overViewOrg, .overViewTkn, .overMessages {
+    width: 100%;
+    background-color: var(--secondaryColor);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.overOrgHead, .overTknHead, .overMsgHead {
+    width: 100%;
+    text-align: start;
+    margin-bottom: 1.5rem;
+}
+
+.overOrg, .overTkn, .notMsg {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.overOrg.length, .overTkn.length {
+    height: 268px;
+    overflow-y: hidden;
+}
+
+.tknView {
+    padding: 10px;
+}
+
+.tknView h3 {
+    font-size: 16px;
+}
+
+.seeMore {
+    display: none;
+}
+
+.seeMore.active {
+    width: 100%;
+    text-align: end;
+    margin-top: 1rem;
+    display: block;
+}
+
+.seeMore a {
+    text-decoration: none;
+    color: var(--accentColor);
+}
+
+.overMessages {
+    margin: 2rem 0 0;
+}
+
+.overMsg {
+    row-gap: 10px;
+}
+
+.overMsg.length {
+    height: 320px;
+    overflow-y: hidden;
+}
+
+.notMsg {
+    align-items: flex-start;
+    background-color: var(--dashColor);
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.msgSender {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.msgSender h3 {
+    font-size: 16px;
+}
+
+.msgSender p {
+    font-size: 12px;
+    color: green;
+}
+
+.msgMsg {
+    width: 100%;
+    text-align: start;
+    height: 20px;
+    overflow-y: hidden;
+}
+
+.msgMsg p {
+    color: #cdcdcd;
+}

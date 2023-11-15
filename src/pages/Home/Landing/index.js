@@ -3,7 +3,7 @@ import Nav from '../../../components/Nav';
 import Header from './Header';
 import Main from './Main';
 import "./LandingPage.css"
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 function LandingPage() {
 

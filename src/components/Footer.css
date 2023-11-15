@@ -24,7 +24,7 @@ footer {
 
 .listHead h3 {
     font-size: var(--lapHead3);
-    color: #ffffff;
+    color: var(--txtColor);
 }
 
 .lists {
@@ -40,7 +40,7 @@ footer {
 
 .lists li a  {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--txtColor);
     font-size: var(--lapParagraph1);
     transition: .7s;
 }

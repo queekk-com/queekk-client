@@ -51,7 +51,7 @@ const Globe = () => {
         `;
 
         let
-        sizes,
+        // sizes,
         scene,
         camera,
         renderer,

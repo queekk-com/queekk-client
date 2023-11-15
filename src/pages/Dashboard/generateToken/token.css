@@ -1,0 +1,108 @@
+.tokens::-webkit-scrollbar-track {
+    padding: 2px 4px;
+    background-color: var(--secondaryColor);
+    border-radius: 5px;
+}
+
+.tokens::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tokens::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--accentColor);
+    border: 1px solid #000;
+}
+
+.tokenMain {
+    width: 100%;
+    padding: 15px;
+}
+
+.genToken,
+.tknCtrl,
+.displayTkn {
+    display: flex;
+    flex-direction: column;
+}
+
+.genToken {
+    row-gap: 2rem;
+}
+
+.genToken, .displayTkn {
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    border-radius: 10px;
+}
+
+.tknCtrl {
+    text-align: start;
+    row-gap: 10px;
+    background-color: var(--dashColor);
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px 2rem;
+}
+
+.tknCtrl label {
+    font-size: var(--lapParagraph1);
+}
+
+.tknCtrl input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: 3px solid var(--accentColor);
+    border-radius: 10px;
+    padding: 0 10px;
+    font-size: 14px;
+    transition: border-color .7s ease-in-out, box-shadow .7s ease-in-out, transform .7s ease-in-out;
+}
+
+.tknBtn {
+    width: 100%;
+}
+
+.tknBtn button {
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: var(--accentColor);
+    font-size: 16px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+}
+
+.displayTkn {
+    margin-top: 2rem;
+    row-gap: 10px;
+}
+
+.genTkns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 2rem;
+    background-color: var(--dashColor);
+    border-radius: 10px;
+}
+
+.tknIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accentColor);
+    color: #ffffff;
+    font-size: 20px;
+}
