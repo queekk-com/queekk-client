@@ -38,7 +38,7 @@ function OverView() {
                             }
                         </div>
                         <div className={orgInfo.length > 5 ? "seeMore active" : "seeMore"}>
-                            <Link to='/dashboard/organisation'>...see more</Link>
+                            <Link to='/dashboard/organisations'>...see more</Link>
                         </div>
                     </div>
                     <div className="overViewTkn">
