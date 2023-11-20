@@ -57,8 +57,9 @@
 
 .sampMain {
     display: flex;
-    justify-content: space-between;
-    margin-top: -2rem;
+    gap: 24px;
+    justify-content: space-around;
+    align-self: center;
 }
 
 .samps {
