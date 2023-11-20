@@ -14,6 +14,12 @@
     border: 1px solid #000;
 }
 
+.dashNav {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
 .overviewContent {
     width: 100%;
     padding: 15px;
