@@ -21,7 +21,7 @@ function Tokens() {
                 <form action="" className="genToken">
                     <div className="tknCtrl">
                         <label htmlFor="">Type in your OpenAi Api key:</label>
-                        <input type="text" />
+                        <input type="text" placeholder='sk-xxxxxxxxxx' />
                     </div>
                     <div className="tknBtn">
                         <button>Generate Token</button>
