@@ -51,7 +51,7 @@ function DisplayDashboard () {
                             </div>
                             <span>Settings</span>
                         </NavLink>
-                        <NavLink to='logout'>
+                        <NavLink to='/login'>
                             <div className="acctIcon">
                                 <BiLogOut />
                             </div>
