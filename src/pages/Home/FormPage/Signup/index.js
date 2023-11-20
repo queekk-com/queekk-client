@@ -51,7 +51,7 @@ function Signup() {
     
     return (
         <div className='signUp form'>
-            <div className="formLogo">
+            <div className="formLogo" onClick={() => navigate("/")}>
                 <h1>QUEEKK</h1>
                 <img src={formLogo} alt="" />
             </div>

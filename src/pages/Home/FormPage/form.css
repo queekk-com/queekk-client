@@ -11,9 +11,23 @@
     column-gap: 6px;
 }
 
+.formLogo:hover {
+    cursor: pointer;
+}
+
+
 .formLogo h1 {
     font-size: 35px;
     color: var(--accentColor);
+    transition: all .1s ease-in-out;
+}
+
+.formLogo:hover h1 {
+    color: white;
+}
+
+.formLogo:active h1 {
+    transform: scale(1.01);
 }
 
 .formLogo img {

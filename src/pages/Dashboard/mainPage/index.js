@@ -13,17 +13,17 @@ function DisplayDashboard () {
         <div className="displayBoard">
             <div className='sideMenu'>
                 <div className="mainMenu">
-                    <NavLink to='updates'>
+                    <NavLink to={""} end>
                         <div className="sideIcon">
                             <AiOutlineDashboard />
                         </div>
                         <span>Dashboard</span>
                     </NavLink>
-                    <NavLink to='organisation'>
+                    <NavLink to='organisations'>
                         <div className="sideIcon">
                             <BsBuildingFillAdd />
                         </div>
-                        <span>Organisation</span>
+                        <span>Organisations</span>
                     </NavLink>
                     <NavLink to='tokens'>
                         <div className="sideIcon">

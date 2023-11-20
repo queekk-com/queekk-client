@@ -7,16 +7,18 @@ import Login from './pages/Home/FormPage/Login';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import DisplayDashboard from './pages/Dashboard/mainPage';
-import Organisation from './pages/Dashboard/organisation/Organisation';
 import Tokens from './pages/Dashboard/generateToken/Tokens';
 import Settings from './pages/Dashboard/settings/Settings';
 import OverView from './pages/Dashboard/dashboardOverview/OverView';
-import Messages from './pages/Dashboard/messages/Messages';
+import Messages from './pages/Dashboard/messages';
 import useLocalStorage from "use-local-storage";
 import { createContext } from 'react';
 import OrgForm from './components/organisationComponent/OrgForm';
 import OrgList from './components/organisationComponent/OrgList';
-import ViewMsg from './components/messageComponent/ViewMsg';
+import ViewMsg from './pages/Dashboard/messages/viewMessage/ViewMsg';
+import AllMessages from './pages/Dashboard/messages/allMessages/AllMessages';
+import Organisations from './pages/Dashboard/organisations';
+import AllOrganizations from './pages/Dashboard/organisations/allOrganizations/AllOrganizations';
 
 export const ThemeContext = createContext(null);
 
@@ -49,14 +51,16 @@ function App() {
             <Route path='signup' element={<Signup />} />
             <Route path='login' element={<Login />} />
             <Route path='dashboard' element={<DisplayDashboard />}>
-              <Route path='updates' element={<OverView />} />
-              <Route path='organisation' element={<Organisation />}>
-                <Route path='orgForm' element={<OrgForm />} />
-                <Route path='organisationId' element={<OrgList />} />
+              <Route index element={<OverView />} />
+              <Route path='organisations' element={<Organisations />}>
+                <Route index element={<AllOrganizations />} />
+                <Route path='create/new' element={<OrgForm />} />
+                <Route path=':id' element={<OrgList />} />
               </Route>
               <Route path='tokens' element={<Tokens />} />
               <Route path='messages' element={<Messages />}>
-                <Route path='viewMessage' element={<ViewMsg />} />
+                <Route index element={<AllMessages />} />
+                <Route path=':id' element={<ViewMsg />} />
               </Route>
               <Route path='settings' element={<Settings />} />
             </Route>

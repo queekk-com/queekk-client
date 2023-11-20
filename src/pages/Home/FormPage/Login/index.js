@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import formLogo from '../../../../assets/svgs/logo.svg';
 import '../form.css';
 import { toast } from "react-toastify";
@@ -10,6 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const btnRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Queekk | Log in";
@@ -35,17 +36,17 @@ const Login = () => {
       }
       localStorage.setItem('token', data.data.token);
       toast.success(data.message);
-      window.location.href = "/dashboard";
+      window.location.href = "/dashboard/";
     } catch (error) {
       setLoading(false);
-      if (error.message === "Failed to fetch") console.log("Please check your internet connection");
-      else console.log("An error occured");
+      if (error.message === "Failed to fetch") toast.error("Please check your internet connection");
+      else toast.error("An error occured");
     }
   }
 
   return (
     <div className='logIn form'>
-      <div className="formLogo">
+      <div className="formLogo" onClick={() => navigate("/")}>
         <h1>QUEEKK</h1>
         <img src={formLogo} alt="" />
       </div>
@@ -56,6 +57,7 @@ const Login = () => {
             <input
               autoFocus
               required
+              placeholder="queekk@example.com"
               value={email}
               onChange={e => setEmail(e.target.value)} 
               type="email" />
@@ -65,6 +67,7 @@ const Login = () => {
             <input
               required
               value={password}
+              placeholder="********"
               onChange={e => setPassword(e.target.value)} 
               type="password" />
           </div>
