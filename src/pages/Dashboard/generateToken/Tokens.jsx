@@ -2,6 +2,7 @@ import React from 'react';
 import logoImg from '../../../assets/svgs/logo.svg';
 import './token.css';
 import { AiFillCopy } from 'react-icons/ai';
+import tokenData from './data/token-data';
 
 function Tokens() {
     return (
@@ -28,24 +29,16 @@ function Tokens() {
                     </div>
                 </form>
                 <div className="displayTkn">
-                    <div className="genTkns">
-                        <h3>ff99bce</h3>
-                        <div className="tknIcon">
-                            <AiFillCopy />
-                        </div>
-                    </div>
-                    <div className="genTkns">
-                        <h3>ff99bce</h3>
-                        <div className="tknIcon">
-                            <AiFillCopy />
-                        </div>
-                    </div>
-                    <div className="genTkns">
-                        <h3>ff99bce</h3>
-                        <div className="tknIcon">
-                            <AiFillCopy />
-                        </div>
-                    </div>
+                    {
+                        tokenData.map((tkn) => (
+                            <div key={tkn._id} className="genTkns">
+                                <h3>{tkn.tokenNumber}</h3>
+                                <div className="tknIcon">
+                                    <AiFillCopy />
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </div>
