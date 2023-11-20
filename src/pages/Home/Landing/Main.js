@@ -57,74 +57,74 @@ function Main() {
                 <div className='sampMain'>
                     <CodeBlock>
                         <p>
-                            {"<"}<span class="tag-name">head</span>{" >"}
+                            {"<"}<span className="tag-name">head</span>{" >"}
                         </p>
                         <p className='tab'>
-                            {"<"}<span class="tag-name">link</span> <span class="tag-attribute">rel</span>=<span class="string">"stylesheet" </span> 
-                            <span class="tag-attribute">href</span>=<span class="string">"{process.env.REACT_APP_SERVER}/assistant.css"</span>
-                            <span class="tag-punctuation">{" />"}</span>
+                            {"<"}<span className="tag-name">link</span> <span className="tag-attribute">rel</span>=<span className="string">"stylesheet" </span> 
+                            <span className="tag-attribute">href</span>=<span className="string">"{process.env.REACT_APP_SERVER}/assistant.css"</span>
+                            <span className="tag-punctuation">{" />"}</span>
                         </p>
                         <p className='tab'>
-                            {"<"}<span class="tag-name">script</span> <span class="tag-attribute">async </span> 
-                            <span class="tag-attribute">src</span>=<span class="string">"{process.env.REACT_APP_SERVER}/assistant/7329723"</span>
-                            <span class="tag-punctuation">{" >"}</span>
-                            {"<"}<span class="tag-name">/script</span>{">"}
+                            {"<"}<span className="tag-name">script</span> <span className="tag-attribute">async </span> 
+                            <span className="tag-attribute">src</span>=<span className="string">"{process.env.REACT_APP_SERVER}/assistant/7329723"</span>
+                            <span className="tag-punctuation">{" >"}</span>
+                            {"<"}<span className="tag-name">/script</span>{">"}
                         </p>
                         <p>
-                            {"<"}<span class="tag-name">/head</span>{">"}
+                            {"<"}<span className="tag-name">/head</span>{">"}
                         </p>
                         <br />
                         <p>
-                            {"<"}<span class="tag-name">body</span>{">"}
+                            {"<"}<span className="tag-name">body</span>{">"}
                         </p>
                         <p className='tab'>
-                            {"<"}<span class="tag-name">div</span> <span class="tag-attribute">id</span>=<span class="string">"queekk-container"</span>{" ></"}<span class="tag-name">div</span>{" >"}
+                            {"<"}<span className="tag-name">div</span> <span className="tag-attribute">id</span>=<span className="string">"queekk-container"</span>{" ></"}<span className="tag-name">div</span>{" >"}
                         </p>
                         <p>
-                            {"<"}<span class="tag-name">/body</span>{">"}
+                            {"<"}<span className="tag-name">/body</span>{">"}
                         </p>
                     </CodeBlock>
                     <CodeBlock>
                         <p>
-                            import <span class="keyword">{"{ useEffect }"}</span> from 
-                            <span class="string">"React"</span>;
+                            import <span className="keyword">{"{ useEffect }"}</span> from 
+                            <span className="string">"React"</span>;
                         </p>
                         <br />
                         <p>
-                            <span class="keyword">useEffect</span>(<span class="function">() {` => {`}</span>
+                            <span className="keyword">useEffect</span>(<span className="function">() {` => {`}</span>
                         </p>
-                        <p class='tab'>
-                            <span class="keyword">const</span> <span className='tag-attribute'>link</span> = document.createElement(<span class="string">"link"</span>);
+                        <p className='tab'>
+                            <span className="keyword">const</span> <span className='tag-attribute'>link</span> = document.createElement(<span className="string">"link"</span>);
                         </p>
-                        <p class='tab'>
-                            link.rel = <span class="string">"stylesheet"</span>;
+                        <p className='tab'>
+                            link.rel = <span className="string">"stylesheet"</span>;
                         </p>
-                        <p class='tab'>
-                            link.href = <span class="string">"{process.env.REACT_APP_SERVER}/assistant.css"</span>;
+                        <p className='tab'>
+                            link.href = <span className="string">"{process.env.REACT_APP_SERVER}/assistant.css"</span>;
                         </p>
-                        <p class='tab'>
+                        <p className='tab'>
                             document.head.appendChild(link);
                         </p>
                         <br />
-                        <p class='tab'>
-                            <span class="keyword">const</span> <span className='tag-attribute'>script</span> = document.createElement(<span class="string">"script"</span>);
+                        <p className='tab'>
+                            <span className="keyword">const</span> <span className='tag-attribute'>script</span> = document.createElement(<span className="string">"script"</span>);
                         </p>
-                        <p class='tab'>
-                            script.src = <span class="string">"{process.env.REACT_APP_SERVER}/assistant/7329723"</span>;
+                        <p className='tab'>
+                            script.src = <span className="string">"{process.env.REACT_APP_SERVER}/assistant/7329723"</span>;
                         </p>
-                        <p class='tab'>
-                            script.async = <span class="keyword">true</span>;
+                        <p className='tab'>
+                            script.async = <span className="keyword">true</span>;
                         </p>
-                        <p class='tab'>
+                        <p className='tab'>
                             document.head.appendChild(script);
                         </p>
                         <p>
-                            <span class="function">{"}"}</span>, []);
+                            <span className="function">{"}"}</span>, []);
                         </p>
                         <br />
                         <p>
-                            return {"<"}<span class="jsx-tag">div</span> <span class="jsx-attribute">id</span>=<span class="string">"queekk-container"</span> 
-                            <span class="jsx-punctuation">{" />"}</span>
+                            return {"<"}<span className="jsx-tag">div</span> <span className="jsx-attribute">id</span>=<span className="string">"queekk-container"</span> 
+                            <span className="jsx-punctuation">{" />"}</span>
                         </p>
                     </CodeBlock>
                 </div>

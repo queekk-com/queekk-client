@@ -145,7 +145,13 @@ nav {
     display: none;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 1120px) {
+    .logAndSearch input {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
     nav {
         padding: 30px;
     }
