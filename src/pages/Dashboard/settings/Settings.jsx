@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import './settings.css';
 import logoImg from '../../../assets/svgs/logo.svg';
 import { ThemeContext } from '../../../App';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
-function Settings() {
+function Settings({ openMenu, handleSideMenu }) {
     const { toggleTheme, themeDecor } = useContext(ThemeContext);
 
     return (
@@ -11,6 +12,9 @@ function Settings() {
             <div className="dashNav">
                 <div className="dashTitle">
                     <h3>Queekk Benhexie</h3>
+                </div>
+                <div onClick={handleSideMenu} className="dashBurger">
+                    <GiHamburgerMenu />
                 </div>
                 <div className="dashLogo">
                     <h3>QUEEKK</h3>

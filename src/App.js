@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Error from './pages/Error';
 import LandingPage from './pages/Home/Landing';
@@ -30,6 +31,13 @@ function App() {
     const newTheme = themeDecor === 'light' ? 'dark' : 'light';
     setThemeDecor(newTheme);
   };
+
+    //handling the menu bar
+    const [openMenu, setOpenMenu] = useState(false);
+
+    const handleSideMenu = () => {
+      setOpenMenu(!openMenu);
+    };
   return (
     <ThemeContext.Provider value={{ themeDecor, toggleTheme }}>
       <div className="App" data-theme={themeDecor}>
@@ -50,19 +58,19 @@ function App() {
             <Route path='/' element={<LandingPage />} />
             <Route path='signup' element={<Signup />} />
             <Route path='login' element={<Login />} />
-            <Route path='dashboard' element={<DisplayDashboard />}>
-              <Route index element={<OverView />} />
-              <Route path='organisations' element={<Organisations />}>
+            <Route path='dashboard' element={<DisplayDashboard openMenu={openMenu} handleSideMenu={handleSideMenu} />}>
+              <Route index element={<OverView openMenu={openMenu} handleSideMenu={handleSideMenu}/>} />
+              <Route path='organisations' element={<Organisations openMenu={openMenu} handleSideMenu={handleSideMenu} />}>
                 <Route index element={<AllOrganizations />} />
                 <Route path='create/new' element={<OrgForm />} />
                 <Route path=':id' element={<OrgList />} />
               </Route>
-              <Route path='tokens' element={<Tokens />} />
-              <Route path='messages' element={<Messages />}>
+              <Route path='tokens' element={<Tokens openMenu={openMenu} handleSideMenu={handleSideMenu} />} />
+              <Route path='messages' element={<Messages openMenu={openMenu} handleSideMenu={handleSideMenu} />}>
                 <Route index element={<AllMessages />} />
                 <Route path=':id' element={<ViewMsg />} />
               </Route>
-              <Route path='settings' element={<Settings />} />
+              <Route path='settings' element={<Settings openMenu={openMenu} handleSideMenu={handleSideMenu}/>} />
             </Route>
             <Route path="*" element={<Error />} />
           </Routes>

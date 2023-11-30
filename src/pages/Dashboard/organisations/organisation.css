@@ -134,3 +134,16 @@
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
 }
+
+@media (max-width: 575px) {
+    .dashNav {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 525px) {
+    .orgOrganisation {
+        grid-template-columns: 12fr;
+        height: fit-content;
+    }
+}

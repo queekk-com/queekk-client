@@ -2,8 +2,9 @@ import React from 'react';
 import './organisation.css';
 import logoImg from '../../../assets/svgs/logo.svg';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
-function Organisations() {
+function Organisations({ handleSideMenu }) {
     const navigate = useNavigate();
 
     const handlePath = () => {
@@ -15,6 +16,9 @@ function Organisations() {
             <div className="dashNav">
                 <div className="dashTitle">
                     <h3>Organisation</h3>
+                </div>
+                <div onClick={handleSideMenu} className="dashBurger">
+                    <GiHamburgerMenu />
                 </div>
                 <div className="dashLogo">
                     <h3>QUEEKK</h3>

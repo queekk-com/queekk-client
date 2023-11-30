@@ -57,7 +57,7 @@ function Main() {
                 <div className='sampMain'>
                     <CodeBlock>
                         <p>
-                            {"<"}<span className="tag-name">head</span>{" >"}
+                            {"<"}<span className="tag-name">head</span>{">"}
                         </p>
                         <p className='tab'>
                             {"<"}<span className="tag-name">link</span> <span className="tag-attribute">rel</span>=<span className="string">"stylesheet" </span> 

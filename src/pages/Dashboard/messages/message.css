@@ -54,15 +54,17 @@
 }
 
 .msgEdit {
+    position: relative;
+}
+
+.msgEditMain {
     display: flex;
     column-gap: 10px;
     align-items: center;
     cursor: pointer;
-    transition: color .7s, text ease .7s;
-    position: relative;
 }
 
-.editInfoMsg {
+.editNewInfo, .edit2 {
     width: 100px;
     padding: 10px;
     border-radius: 10px;
@@ -70,10 +72,19 @@
     top: 100%;
     right: 2%;
     z-index: 2;
-    box-shadow: 0 0 5px var(--accentColor);
     background-color: var(--secondaryColor);
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    transition: opacity .7s;
+}
+
+.editNewInfo.active {
+    opacity: 1;
+}
+
+.edit2.active {
+    opacity: 1;
 }
 
 .editNewInfo {
@@ -86,16 +97,12 @@
     border-radius: 5px;
     padding: 0 5px;
     font-size: 14px;
+    display: block;
 }
 
 .editInfoMsg span:hover {
     background-color: var(--accentColor);
     color: #ffffff;
-}
-
-.msgEdit:hover {
-    text-decoration: underline;
-    color: var(--accentColor);
 }
 
 .editMsg {
@@ -105,4 +112,11 @@
 
 .msgVwd h3, .msgVwd p {
     color: gray;
+}
+
+@media (max-width: 525px) {
+    .newMsg,
+    .viewMsg {
+        grid-template-columns: 12fr;
+    }
 }

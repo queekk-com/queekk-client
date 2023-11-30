@@ -6,13 +6,17 @@ import './overView.css';
 import msgs from '../messages/data/messages-data';
 import orgInfo from '../organisations/data/organizations-data';
 import tokenData from '../generateToken/data/token-data';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
-function OverView() {
+function OverView({ handleSideMenu }) {
     return (
         <div className='overview'>
             <div className="dashNav">
                 <div className="dashTitle">
                     <h3>Overview</h3>
+                </div>
+                <div onClick={handleSideMenu} className="dashBurger">
+                    <GiHamburgerMenu />
                 </div>
                 <div className="dashLogo">
                     <h3>QUEEKK</h3>
@@ -29,8 +33,8 @@ function OverView() {
                         </div>
                         <div className={orgInfo.length > 5 ? "overOrg length" : "overOrg"}>
                             {
-                                orgInfo.map((org) => (
-                                    <div key={org.id} className="disOrg orgView">
+                                orgInfo.map((org, id) => (
+                                    <div key={id} className="disOrg orgView">
                                         <h3>{org.orgName}</h3>
                                         <Link>{org.domains}</Link>
                                     </div>
@@ -47,8 +51,8 @@ function OverView() {
                         </div>
                         <div className={tokenData.length > 4 ? "overTkn length" : "overTkn"}>
                             {
-                                tokenData.map((tkn) => (
-                                    <div key={tkn.id} className="genTkns tknView">
+                                tokenData.map((tkn, id) => (
+                                    <div key={id} className="genTkns tknView">
                                         <h3>{tkn.tokenNumber}</h3>
                                         <div className="tknIcon">
                                             <AiFillCopy />
@@ -68,8 +72,8 @@ function OverView() {
                     </div>
                     <div className={msgs.length > 8 ? "overMsg length" : "overMsg"}>
                         {
-                            msgs.map((msg) => (
-                                <div key={msg.id} className="notMsg">
+                            msgs.map((msg, id) => (
+                                <div key={id} className="notMsg">
                                     <div className="msgSender">
                                         <h3>{msg.customerEmail}</h3>
                                         <p>{msg.time}</p>

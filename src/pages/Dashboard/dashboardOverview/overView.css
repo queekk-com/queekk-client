@@ -17,7 +17,11 @@
 .dashNav {
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 5;
+}
+
+.dashBurger {
+    display: none;
 }
 
 .overviewContent {
@@ -25,32 +29,40 @@
     padding: 15px;
 }
 
-.overOrgNdTkn, .overMsg {
+.overOrgNdTkn,
+.overMsg {
     display: grid;
     grid-template-columns: 6fr 6fr;
     column-gap: 10px;
 }
 
-.overViewOrg, .overViewTkn, .overMessages {
+.overViewOrg,
+.overViewTkn,
+.overMessages {
     width: 100%;
     background-color: var(--secondaryColor);
     padding: 20px;
     border-radius: 10px;
 }
 
-.overOrgHead, .overTknHead, .overMsgHead {
+.overOrgHead,
+.overTknHead,
+.overMsgHead {
     width: 100%;
     text-align: start;
     margin-bottom: 1.5rem;
 }
 
-.overOrg, .overTkn, .notMsg {
+.overOrg,
+.overTkn,
+.notMsg {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
 }
 
-.overOrg.length, .overTkn.length {
+.overOrg.length,
+.overTkn.length {
     height: 268px;
     overflow-y: hidden;
 }
@@ -126,4 +138,30 @@
 
 .msgMsg p {
     color: #cdcdcd;
+}
+
+@media (max-width: 575px) {
+    .dashTitle {
+        display: none;
+    }
+
+    .dashBurger {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        border: 2px solid var(--accentColor);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .overOrgNdTkn,
+    .overMsg {
+        grid-template-columns: 12fr;
+        row-gap: 10px;
+    }
+
+    .overOrgNdTkn {
+        row-gap: 1rem;
+    }
 }

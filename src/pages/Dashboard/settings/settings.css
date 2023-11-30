@@ -112,3 +112,15 @@
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
 }
+
+@media (max-width: 525px) {
+    .setCtrl {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .setInp {
+        grid-template-columns: 12fr;
+    }
+}

@@ -3,13 +3,17 @@ import logoImg from '../../../assets/svgs/logo.svg';
 import './token.css';
 import { AiFillCopy } from 'react-icons/ai';
 import tokenData from './data/token-data';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
-function Tokens() {
+function Tokens({ handleSideMenu }) {
     return (
         <div className='tokens'>
             <div className="dashNav">
                 <div className="dashTitle">
                     <h3>Generate Token</h3>
+                </div>
+                <div onClick={handleSideMenu} className="dashBurger">
+                    <GiHamburgerMenu />
                 </div>
                 <div className="dashLogo">
                     <h3>QUEEKK</h3>

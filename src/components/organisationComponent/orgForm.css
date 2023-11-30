@@ -69,3 +69,16 @@
     outline: none;
     padding: 10px;
 }
+
+.err-Msg {
+    color: red;
+    text-align: center !important;
+    font-size: 14px;
+}
+
+@media (max-width: 575px) {
+    .orgFrmSptInfo {
+        grid-template-columns: 12fr;
+        row-gap: 1rem;
+    }
+}

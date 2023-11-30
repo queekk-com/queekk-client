@@ -59,9 +59,7 @@
     border-radius: 10px;
     background-color: rgb(172, 172, 172);
     font-size: 16px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
 .optionSlt {
@@ -90,4 +88,34 @@
 
 .inpChgOpt span:hover {
     background-color: var(--accentColor);
+}
+
+@media (max-width: 575px) {
+    .orgInfoCtrl {
+        padding: 20px 10px;
+    }
+
+    .orgInpChg button {
+        width: 120px;
+        font-size: 14px;
+    }
+
+    .inpChgOpt {
+        width: 100%;
+    }
+}
+
+@media (max-width: 428px) {
+    .orgInpChg {
+        column-gap: 10px;
+    }
+
+    .orgInpChg input {
+        width: 80%;
+    }
+
+    .orgInpChg button {
+        width: 100px;
+        font-size: 14px;
+    }
 }
