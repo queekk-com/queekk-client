@@ -139,6 +139,15 @@
     .dashNav {
         padding: 30px;
     }
+
+    .organisation,
+    .tokens,
+    .settings,
+    .overview,
+    .message {
+        overflow-y: visible;
+        height: 100%;
+    }
 }
 
 @media (max-width: 525px) {
