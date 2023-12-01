@@ -56,6 +56,22 @@ body {
   background-color: var(--primaryColor);
 }
 
+body::-webkit-scrollbar-track {
+  padding: 2px 4px;
+  background-color: var(--secondaryColor);
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--accentColor);
+  border: 1px solid #000;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

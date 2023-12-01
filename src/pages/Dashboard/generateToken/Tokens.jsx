@@ -4,8 +4,15 @@ import './token.css';
 import { AiFillCopy } from 'react-icons/ai';
 import tokenData from './data/token-data';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { toast } from 'react-toastify';
 
 function Tokens({ handleSideMenu }) {
+    const handleCopyText = (text) => {
+        navigator.clipboard.writeText(text)
+        .then(() => {
+            toast.success(`Copied: ${text}`);
+        })
+    }
     return (
         <div className='tokens'>
             <div className="dashNav">
@@ -37,7 +44,7 @@ function Tokens({ handleSideMenu }) {
                         tokenData.map((tkn) => (
                             <div key={tkn._id} className="genTkns">
                                 <h3>{tkn.tokenNumber}</h3>
-                                <div className="tknIcon">
+                                <div className="tknIcon" onClick={() => handleCopyText(tkn.tokenNumber)}>
                                     <AiFillCopy />
                                 </div>
                             </div>

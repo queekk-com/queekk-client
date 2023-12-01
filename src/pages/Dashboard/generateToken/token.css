@@ -106,3 +106,19 @@
     color: #ffffff;
     font-size: 20px;
 }
+
+@media (max-width: 428px) {
+    .genTkns, .tknCtrl {
+        padding: 15px;
+    }
+
+    .genTkns h3 {
+        font-size: 18px;
+    }
+
+    .tknIcon {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+}
