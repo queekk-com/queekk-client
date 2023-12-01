@@ -119,7 +119,7 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 428px) {
     .setInp {
         grid-template-columns: 12fr;
     }
