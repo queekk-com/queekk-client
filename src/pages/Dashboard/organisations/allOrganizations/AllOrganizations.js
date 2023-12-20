@@ -8,7 +8,7 @@ const AllOrganizations = () => {
 
     const navigate = useNavigate();
     const handlePath = () => {
-        navigate('/dashboard/organisations/create/new')
+        navigate('create')
     }
 
   return (

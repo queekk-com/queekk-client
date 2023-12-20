@@ -62,7 +62,7 @@ function App() {
               <Route index element={<OverView openMenu={openMenu} handleSideMenu={handleSideMenu}/>} />
               <Route path='organizations' element={<Organisations openMenu={openMenu} handleSideMenu={handleSideMenu} />}>
                 <Route index element={<AllOrganizations />} />
-                <Route path='create/new' element={<OrgForm />} />
+                <Route path='create' element={<OrgForm />} />
                 <Route path=':id' element={<OrgList />} />
               </Route>
               <Route path='tokens' element={<Tokens openMenu={openMenu} handleSideMenu={handleSideMenu} />} />
