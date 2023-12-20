@@ -15,7 +15,7 @@ function Organisations({ handleSideMenu }) {
         <div className='organisation'>
             <div className="dashNav">
                 <div className="dashTitle">
-                    <h3>Organization</h3>
+                    <h3>Organizations</h3>
                 </div>
                 <div onClick={handleSideMenu} className="dashBurger">
                     <GiHamburgerMenu />
