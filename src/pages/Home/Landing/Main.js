@@ -66,7 +66,7 @@ function Main() {
                         </p>
                         <p className='tab'>
                             {"<"}<span className="tag-name">script</span> <span className="tag-attribute">async </span> 
-                            <span className="tag-attribute">src</span>=<span className="string">"{process.env.REACT_APP_SERVER}/assistant/7329723"</span>
+                            <span className="tag-attribute">src</span>=<span className="string">"{process.env.REACT_APP_SERVER}/assistant/q-xxxxxxxxx"</span>
                             <span className="tag-punctuation">{" >"}</span>
                             {"<"}<span className="tag-name">/script</span>{">"}
                         </p>
@@ -87,7 +87,7 @@ function Main() {
                     <CodeBlock>
                         <p>
                             import <span className="keyword">{"{ useEffect }"}</span> from 
-                            <span className="string">"React"</span>;
+                            <span className="string"> "react"</span>;
                         </p>
                         <br />
                         <p>
@@ -110,7 +110,7 @@ function Main() {
                             <span className="keyword">const</span> <span className='tag-attribute'>script</span> = document.createElement(<span className="string">"script"</span>);
                         </p>
                         <p className='tab'>
-                            script.src = <span className="string">"{process.env.REACT_APP_SERVER}/assistant/7329723"</span>;
+                            script.src = <span className="string">"{process.env.REACT_APP_SERVER}/assistant/q-xxxxxxxxx"</span>;
                         </p>
                         <p className='tab'>
                             script.async = <span className="keyword">true</span>;
