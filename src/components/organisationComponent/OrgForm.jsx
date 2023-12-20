@@ -59,7 +59,7 @@ function OrgForm() {
 
             toast.success(data.message);
             dispatch(updateOrganizationData(data.data));
-            navigate('/dashboard/organisations');
+            navigate('/dashboard/organizations');
         } catch (err) {
             console.log(err);
         }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './organisation.css';
+import './organization.css';
 import logoImg from '../../../assets/svgs/logo.svg';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
