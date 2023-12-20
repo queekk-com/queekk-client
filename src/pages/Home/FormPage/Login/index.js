@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import formLogo from '../../../../assets/svgs/logo.svg';
 import '../form.css';
 import { toast } from "react-toastify";
+import { setUserData } from "../../../../redux/actions";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
 
@@ -34,9 +36,9 @@ const Login = () => {
         toast.error(data.message);
         return;
       }
-      localStorage.setItem('token', data.data.token);
       toast.success(data.message);
-      window.location.href = "/dashboard/";
+      localStorage.setItem('token', data.data.token);
+      navigate('/dashboard');
     } catch (error) {
       setLoading(false);
       if (error.message === "Failed to fetch") toast.error("Please check your internet connection");

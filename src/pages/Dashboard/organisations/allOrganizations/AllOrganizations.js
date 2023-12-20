@@ -1,8 +1,10 @@
 import React from 'react'
 import orgInfo from "../data/organizations-data"
 import { Link, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const AllOrganizations = () => {
+    const orgData = useSelector(state => state.organizations);
 
     const navigate = useNavigate();
     const handlePath = () => {
@@ -14,10 +16,10 @@ const AllOrganizations = () => {
         <div className="orgContent">
             <div className={orgInfo.length >= 12 ? "orgOrganisation length" : "orgOrganisation"}>
                 {
-                    orgInfo.map((org) => (
-                        <Link to='organisationId' key={org.id} className="disOrg">
-                            <h3>{org.orgName}</h3>
-                            <small>{org.domains}</small>
+                    orgData.map((org) => (
+                        <Link to='organisationId' key={org._id} className="disOrg">
+                            <h3>{org.name}</h3>
+                            <small>{org.domain}</small>
                         </Link>
                     ))
                 }

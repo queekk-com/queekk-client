@@ -44,10 +44,6 @@ function Settings({ openMenu, handleSideMenu }) {
                                 <input type="text" />
                             </div>
                             <div className="setCtrl">
-                                <label htmlFor="">Username</label>
-                                <input type="text" />
-                            </div>
-                            <div className="setCtrl">
                                 <label htmlFor="">Password</label>
                                 <input type="password" />
                             </div>

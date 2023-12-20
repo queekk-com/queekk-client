@@ -7,8 +7,10 @@ import msgs from '../messages/data/messages-data';
 import orgInfo from '../organisations/data/organizations-data';
 import tokenData from '../generateToken/data/token-data';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { useSelector } from 'react-redux';
 
 function OverView({ handleSideMenu }) {
+    const appData = useSelector(state => state)
     return (
         <div className='overview'>
             <div className="dashNav">
@@ -31,12 +33,12 @@ function OverView({ handleSideMenu }) {
                         <div className="overOrgHead">
                             <h3>Organisations</h3>
                         </div>
-                        <div className={orgInfo.length > 5 ? "overOrg length" : "overOrg"}>
+                        <div className={appData.organizations.length > 5 ? "overOrg length" : "overOrg"}>
                             {
-                                orgInfo.map((org, id) => (
-                                    <div key={id} className="disOrg orgView">
-                                        <h3>{org.orgName}</h3>
-                                        <Link>{org.domains}</Link>
+                                appData.organizations.map((org) => (
+                                    <div key={org._id} className="disOrg orgView">
+                                        <h3>{org.name}</h3>
+                                        <Link>{org.domain}</Link>
                                     </div>
                                 ))
                             }
@@ -49,11 +51,11 @@ function OverView({ handleSideMenu }) {
                         <div className="overTknHead">
                             <h3>Tokens</h3>
                         </div>
-                        <div className={tokenData.length > 4 ? "overTkn length" : "overTkn"}>
+                        <div className={appData.tokens.length > 4 ? "overTkn length" : "overTkn"}>
                             {
-                                tokenData.map((tkn, id) => (
-                                    <div key={id} className="genTkns tknView">
-                                        <h3>{tkn.tokenNumber}</h3>
+                                appData.tokens.map((tkn) => (
+                                    <div key={tkn._id} className="genTkns tknView">
+                                        <h3>{tkn.token}</h3>
                                         <div className="tknIcon">
                                             <AiFillCopy />
                                         </div>

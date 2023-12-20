@@ -135,6 +135,10 @@
         sans-serif;
 }
 
+.submitOrgInfoBtn button:hover {
+    cursor: pointer;
+}
+
 @media (max-width: 575px) {
     .dashNav {
         padding: 30px;

@@ -7,6 +7,8 @@ import { toast } from 'react-toastify';
 function Signup() {
 
     const [email, setEmail] = useState('');
+    const [firstname, setFirstname] = useState('');
+    const [lastname, setLastname] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
     const [terms, setTerms] = useState(false);
@@ -23,6 +25,8 @@ function Signup() {
     const formHandler = async (e) => {
         e.preventDefault();
         if (!email) return toast.error("Email is required");
+        if (!firstname) return toast.error("Firstname is required");
+        if (!lastname) return toast.error("Lastname is required");
         if (!password) return toast.error("Password is required");
         if (password.length < 8) return toast.error("Password must be at least 8 characters long");
         if (password !== passwordConfirmation) return toast.error("Password and password confirmation do not match");
@@ -32,7 +36,13 @@ function Signup() {
             const response = await fetch(`${process.env.REACT_APP_SERVER}/auth/signup`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, password, passwordConfirmation })
+                body: JSON.stringify({ 
+                    email, 
+                    firstname,
+                    lastname,
+                    password, 
+                    passwordConfirmation 
+                })
             });
             setLoading(false);
             const data = await response.json();
@@ -58,11 +68,30 @@ function Signup() {
             <form onSubmit={formHandler} className='logCredentials' autoComplete="off">
                 <div className="frmValue">
                     <div className="frmCtrl">
-                        <label>Email</label>
+                        <label>First Name</label>
                         <input 
                             required
                             autoFocus
+                            placeholder='First Name'
+                            name='firstname'
+                            value={firstname}
+                            onChange={e => setFirstname(e.target.value)} />
+                    </div>
+                    <div className="frmCtrl">
+                        <label>Last Name</label>
+                        <input 
+                            required
+                            placeholder='Last Name'
+                            name='lastname'
+                            value={lastname}
+                            onChange={e => setLastname(e.target.value)} />
+                    </div>
+                    <div className="frmCtrl">
+                        <label>Email</label>
+                        <input 
+                            required
                             placeholder='support@queekk.com'
+                            name='email'
                             type="email"
                             value={email}
                             onChange={e => setEmail(e.target.value)} />
@@ -72,6 +101,7 @@ function Signup() {
                         <input 
                             required
                             placeholder='********'
+                            name='password'
                             type="password"
                             autoComplete='new-password'
                             value={password}
@@ -83,6 +113,7 @@ function Signup() {
                         <input 
                             required
                             placeholder='********'
+                            name='passwordConfirmation'
                             type="password"
                             value={passwordConfirmation}
                             onChange={e => setPasswordConfirmation(e.target.value)} />

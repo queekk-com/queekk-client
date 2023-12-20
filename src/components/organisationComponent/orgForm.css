@@ -6,7 +6,7 @@
     color: var(--txtColor);
 }
 
-.createOrgForm, .orgFrmCtrl, .sptCtrl, .sptDvd {
+.createOrgForm, .orgFrmCtrl {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -17,7 +17,7 @@
     row-gap: 1.5rem;
 }
 
-.orgFrmCtrl, .sptCtrl {
+.orgFrmCtrl {
     row-gap: 10px;
     width: 100%;
     background-color: var(--dashColor);
@@ -26,8 +26,7 @@
     padding: 20px 2rem;
 }
 
-.orgFrmCtrl input,
-.sptDvd .sptCtrl input {
+.orgFrmCtrl input:not([type="file"]) {
     width: 100%;
     height: 40px;
     outline: none;
@@ -38,36 +37,40 @@
     transition: border-color .7s ease-in-out, box-shadow .7s ease-in-out, transform .7s ease-in-out;
 }
 
-.orgFrmSptInfo {
-    display: grid;
-    grid-template-columns: 6fr 6fr;
-    column-gap: 10px;
-    width: 100%;
-}
-
-.sptSngl, .sptDvd, .sptFrmCtrl {
-    width: 100%;
-}
-
-.sptCtrl {
-    height: fit-content;
-    width: 100%;
-}
-
-.sptDvd {
-    row-gap: 10px;
-}
-
-.sptDvd .sptCtrl:last-child input {
+.orgFrmCtrl input[type="file"] {
+    outline: none;
+    background-color: var(--accentColor);
+    color: #ffffff;
     border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    transition: background-color .7s ease-in-out, box-shadow .7s ease-in-out, transform .7s ease-in-out;
 }
 
-.sptSngl textarea {
+.orgFrmCtrl select {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: 3px solid var(--accentColor);
+    border-radius: 10px;
+    padding: 0 10px;
+    font-size: 14px;
+    transition: border-color .7s ease-in-out, box-shadow .7s ease-in-out, transform .7s ease-in-out;
+}
+
+.orgFrmCtrl :is(input[type="file"], select):hover {
+    cursor: pointer;
+}
+
+.orgFrmCtrl textarea {
     width: 100%;
     height: 160px;
     border-radius: 10px;
     outline: none;
     padding: 10px;
+    resize: vertical;
+    border: 3px solid var(--accentColor);
 }
 
 .err-Msg {

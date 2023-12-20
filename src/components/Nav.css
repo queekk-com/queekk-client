@@ -142,8 +142,16 @@ nav {
     display: none;
 }
 
+.burger:hover {
+    cursor: pointer;
+}
+
 .searchIcon {
     display: none;
+}
+
+.searchIcon:hover {
+    cursor: pointer;
 }
 
 @media (max-width: 1120px) {
