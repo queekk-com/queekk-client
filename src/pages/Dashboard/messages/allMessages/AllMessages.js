@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import { FaEdit } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import msgs from "../data/messages-data"
+import { useSelector } from 'react-redux';
 
 const AllMessages = () => {
+    const messageData = useSelector(state => state.messages);
     const [ msgOpt1, setMsgOpt1 ] = useState(false);
     const handleMsgOpt1 = () => {
         setMsgOpt1(!msgOpt1);
@@ -31,14 +33,15 @@ const AllMessages = () => {
                 </div>
                 <div className={msgs.length > 8 ? "newMsg length" : "newMsg"}>
                     {
-                        msgs.map((msg) => (
-                            <Link to='viewMessage' key={msg.id} className="notMsg">
+                        messageData.filter(msg => !msg.read)
+                        .map((msg) => (
+                            <Link to={msg._id} key={msg._id} className="notMsg">
                                 <div className="msgSender">
-                                    <h3>{msg.customerEmail}</h3>
-                                    <p>{msg.time}</p>
+                                    <h3>{msg.sender}</h3>
+                                    <p>{msg.createdAt}</p>
                                 </div>
                                 <div className="msgMsg">
-                                    <p>{msg.customerMsg}</p>
+                                    <p>{msg.message}</p>
                                 </div>
                             </Link>
                         ))
@@ -61,14 +64,15 @@ const AllMessages = () => {
                 </div>
                 <div className={msgs.length > 8 ? "viewMsg length" : "viewMsg"}>
                     {
-                        msgs.map((msg) => (
-                            <Link to='viewMessage' key={msg.id} className="notMsg">
+                        messageData.filter(msg => msg.read)
+                        .map((msg) => (
+                            <Link to={msg._id} key={msg._id} className="notMsg">
                                 <div className="msgSender msgVwd">
-                                    <h3>{msg.customerEmail}</h3>
-                                    <p>{msg.time}</p>
+                                    <h3>{msg.sender}</h3>
+                                    <p>{msg.createdAt}</p>
                                 </div>
                                 <div className="msgMsg">
-                                    <p>{msg.customerMsg}</p>
+                                    <p>{msg.message}</p>
                                 </div>
                             </Link>
                         ))

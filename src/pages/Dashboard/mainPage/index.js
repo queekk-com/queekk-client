@@ -59,11 +59,11 @@ function DisplayDashboard ({ openMenu, handleSideMenu }) {
                                 </div>
                                 <span>Dashboard</span>
                             </NavLink>
-                            <NavLink onClick={handleSideMenu} to='organisations'>
+                            <NavLink onClick={handleSideMenu} to='organizations'>
                                 <div className="sideIcon">
                                     <BsBuildingFillAdd />
                                 </div>
-                                <span>Organisations</span>
+                                <span>Organizations</span>
                             </NavLink>
                             <NavLink onClick={handleSideMenu} to='tokens'>
                                 <div className="sideIcon">

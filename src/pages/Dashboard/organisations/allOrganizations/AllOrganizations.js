@@ -17,7 +17,7 @@ const AllOrganizations = () => {
             <div className={orgInfo.length >= 12 ? "orgOrganisation length" : "orgOrganisation"}>
                 {
                     orgData.map((org) => (
-                        <Link to='organisationId' key={org._id} className="disOrg">
+                        <Link to={org._id} key={org._id} className="disOrg">
                             <h3>{org.name}</h3>
                             <small>{org.domain}</small>
                         </Link>

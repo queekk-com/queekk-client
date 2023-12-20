@@ -39,7 +39,7 @@
     width: 100%;
 }
 
-.orgInpChg input {
+.orgInpChg :is(input, textarea) {
     width: 90%;
     height: 40px;
     outline: none;
@@ -49,6 +49,15 @@
     padding: 0 10px;
     font-size: 14px;
     transition: border-color .7s ease-in-out, box-shadow .7s ease-in-out, transform .7s ease-in-out;
+}
+
+.orgInpChg textarea {
+    height: 120px;
+    resize: none;
+}
+
+.orgInpChg :is(input, textarea):disabled {
+    background-color: transparent;
 }
 
 .orgInpChg button {

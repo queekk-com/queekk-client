@@ -31,19 +31,19 @@ function OverView({ handleSideMenu }) {
                 <div className="overOrgNdTkn">
                     <div className="overViewOrg">
                         <div className="overOrgHead">
-                            <h3>Organisations</h3>
+                            <h3>Organizations</h3>
                         </div>
                         <div className={appData.organizations.length > 5 ? "overOrg length" : "overOrg"}>
                             {
                                 appData.organizations.map((org) => (
-                                    <div key={org._id} className="disOrg orgView">
+                                    <Link key={org._id} to={`organizations/${org._id}`} className="disOrg orgView">
                                         <h3>{org.name}</h3>
-                                        <Link>{org.domain}</Link>
-                                    </div>
+                                        <p>{org.domain}</p>
+                                    </Link>
                                 ))
                             }
                         </div>
-                        <div className={orgInfo.length > 5 ? "seeMore active" : "seeMore"}>
+                        <div className={appData.organizations.length > 5 ? "seeMore active" : "seeMore"}>
                             <Link to='/dashboard/organisations'>...see more</Link>
                         </div>
                     </div>
@@ -54,28 +54,28 @@ function OverView({ handleSideMenu }) {
                         <div className={appData.tokens.length > 4 ? "overTkn length" : "overTkn"}>
                             {
                                 appData.tokens.map((tkn) => (
-                                    <div key={tkn._id} className="genTkns tknView">
+                                    <Link key={tkn._id} to={`tokens/${tkn._id}`} className="genTkns tknView">
                                         <h3>{tkn.token}</h3>
                                         <div className="tknIcon">
                                             <AiFillCopy />
                                         </div>
-                                    </div>
+                                    </Link>
                                 ))
                             }
                         </div>
-                        <div className={tokenData.length > 4 ? "seeMore active" : "seeMore"}>
+                        <div className={appData.tokens.length > 4 ? "seeMore active" : "seeMore"}>
                             <Link to='/dashboard/tokens'>...see more</Link>
                         </div>
                     </div>
                 </div>
                 <div className="overMessages">
                     <div className="overMsgHead">
-                        <h3>New messages({msgs.length})</h3>
+                        <h3>New messages ({appData.messages.length})</h3>
                     </div>
-                    <div className={msgs.length > 8 ? "overMsg length" : "overMsg"}>
+                    <div className={appData.messages.length > 8 ? "overMsg length" : "overMsg"}>
                         {
-                            msgs.map((msg, id) => (
-                                <div key={id} className="notMsg">
+                            appData.messages.map((msg) => (
+                                <Link key={msg._id} to={`messages/${msg._id}`} className="notMsg">
                                     <div className="msgSender">
                                         <h3>{msg.customerEmail}</h3>
                                         <p>{msg.time}</p>
@@ -83,11 +83,11 @@ function OverView({ handleSideMenu }) {
                                     <div className="msgMsg">
                                         <p>{msg.customerMsg}</p>
                                     </div>
-                                </div>
+                                </Link>
                             ))
                         }
                     </div>
-                    <div className={msgs.length > 8 ? "seeMore active" : "seeMore"}>
+                    <div className={appData.messages.length > 8 ? "seeMore active" : "seeMore"}>
                         <Link to='/dashboard/messages'>...see more</Link>
                     </div>
                 </div>

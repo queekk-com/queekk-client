@@ -1,7 +1,13 @@
 import React from 'react';
 import './orgList.css';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 function OrgList() {
+    const location = useLocation().pathname;
+    const orgData = useSelector(state => {
+        return state.organizations.filter(org => org._id === location.split("/").pop())?.[0]
+    })
     return (
         <div className="orgOutlet">
             <div className='orgList'>
@@ -14,7 +20,7 @@ function OrgList() {
                         <div className="orgInpChg">
                             <input
                                 type="text"
-                                placeholder='Organisation 1'
+                                placeholder={orgData.name}
                                 disabled
                             />
                             <button>Change</button>
@@ -25,7 +31,7 @@ function OrgList() {
                         <div className="orgInpChg">
                             <input
                                 type="email"
-                                placeholder='Organisation@gmail.com'
+                                placeholder={orgData.email}
                                 disabled
                             />
                             <button>Change</button>
@@ -36,7 +42,7 @@ function OrgList() {
                         <div className="orgInpChg">
                             <input
                                 type="tel"
-                                placeholder='+177-234-7896'
+                                placeholder={String(orgData.contact)}
                                 disabled
                             />
                             <button>Change</button>
@@ -45,9 +51,8 @@ function OrgList() {
                     <div className="orgInfoCtrl">
                         <label htmlFor="">Support Info:</label>
                         <div className="orgInpChg optionSlt">
-                            <input
-                                type="text"
-                                placeholder='organisation1SupportInfo.com'
+                            <textarea
+                                placeholder={orgData.info}
                                 disabled
                             />
                             <button>Change</button>
@@ -63,7 +68,7 @@ function OrgList() {
                         <div className="orgInpChg">
                             <input
                                 type="url"
-                                placeholder='https://organisation1.com'
+                                placeholder={orgData.domain}
                                 disabled
                             />
                             <button>Change</button>

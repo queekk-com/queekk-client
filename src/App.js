@@ -60,7 +60,7 @@ function App() {
             <Route path='login' element={<Login />} />
             <Route path='dashboard' element={<DisplayDashboard openMenu={openMenu} handleSideMenu={handleSideMenu} />}>
               <Route index element={<OverView openMenu={openMenu} handleSideMenu={handleSideMenu}/>} />
-              <Route path='organisations' element={<Organisations openMenu={openMenu} handleSideMenu={handleSideMenu} />}>
+              <Route path='organizations' element={<Organisations openMenu={openMenu} handleSideMenu={handleSideMenu} />}>
                 <Route index element={<AllOrganizations />} />
                 <Route path='create/new' element={<OrgForm />} />
                 <Route path=':id' element={<OrgList />} />
