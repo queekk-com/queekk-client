@@ -97,7 +97,7 @@ function Tokens({ handleSideMenu }) {
                     </div>
                 </form>
                 {
-                    appData.tokens.length && (
+                    appData.tokens.length ? (
                         <div className="displayTkn">
                             {
                                 appData.tokens.map((tkn) => (
@@ -110,7 +110,7 @@ function Tokens({ handleSideMenu }) {
                                 ))
                             }
                         </div>
-                    )
+                    ) : <></>
                 }
             </div>
         </div>
