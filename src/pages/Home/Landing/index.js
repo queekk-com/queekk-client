@@ -13,7 +13,7 @@ function LandingPage() {
         document.head.appendChild(link);
 
         const script = document.createElement("script");
-        script.src = `${process.env.REACT_APP_SERVER}/assistant/q-0ad7b1bd9679720ec53d60be30ec4e3ec91adcc1`;
+        script.src = `${process.env.REACT_APP_SERVER}/assistant/q-62ddb92be70b94ce43a08dac78bf0f418ff58402`;
         script.async = true;
         document.head.appendChild(script);
 
