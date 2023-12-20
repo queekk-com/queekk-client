@@ -1,17 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './settings.css';
 import logoImg from '../../../assets/svgs/logo.svg';
 import { ThemeContext } from '../../../App';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { useSelector } from 'react-redux';
 
 function Settings({ openMenu, handleSideMenu }) {
     const { toggleTheme, themeDecor } = useContext(ThemeContext);
+    const appData = useSelector(state => state);
+    const [email, setEmail] = useState("");
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [password, setPassword] = useState("");
 
     return (
         <div className='settings'>
             <div className="dashNav">
                 <div className="dashTitle">
-                    <h3>Queekk Benhexie</h3>
+                    <h3>{appData.user.firstname} {appData.user.lastname}</h3>
                 </div>
                 <div onClick={handleSideMenu} className="dashBurger">
                     <GiHamburgerMenu />
@@ -33,19 +39,47 @@ function Settings({ openMenu, handleSideMenu }) {
                         <div className="setInp">
                             <div className="setCtrl">
                                 <label htmlFor="">Email</label>
-                                <input type="email" />
+                                <input 
+                                    autoComplete='off'
+                                    type="email"
+                                    name='email'
+                                    placeholder={appData.user.email}
+                                    value={email}
+                                    onChange={e => setEmail(e.target.vaue)}
+                                 />
                             </div>
                             <div className="setCtrl">
                                 <label htmlFor="">First name</label>
-                                <input type="text" />
+                                <input 
+                                    autoComplete='off'
+                                    type="text" 
+                                    name='firstname'
+                                    placeholder={appData.user.firstname}
+                                    value={firstname}
+                                    onChange={e => setFirstname(e.target.vaue)}
+                                />
                             </div>
                             <div className="setCtrl">
                                 <label htmlFor="">Last name</label>
-                                <input type="text" />
+                                <input 
+                                    autoComplete='off'
+                                    type="text" 
+                                    name="lastname"
+                                    placeholder={appData.user.lastname}
+                                    value={lastname}
+                                    onChange={e => setLastname(e.target.vaue)}
+                                />
                             </div>
                             <div className="setCtrl">
                                 <label htmlFor="">Password</label>
-                                <input type="password" />
+                                <input 
+                                    autoComplete='off'
+                                    type="password" 
+                                    name='password'
+                                    placeholder='**********'
+                                    value={password}
+                                    onChange={e => setPassword(e.target.vaue)}
+                                />
                             </div>
                         </div>
                         <div className="setBtn">
