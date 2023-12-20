@@ -96,18 +96,22 @@ function Tokens({ handleSideMenu }) {
                         >Generate Token</button>
                     </div>
                 </form>
-                <div className="displayTkn">
-                    {
-                        appData.tokens.map((tkn) => (
-                            <div key={tkn._id} className="genTkns">
-                                <h3>{tkn.token}</h3>
-                                <div className="tknIcon" onClick={() => handleCopyText(tkn.token)}>
-                                    <AiFillCopy />
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
+                {
+                    appData.tokens && (
+                        <div className="displayTkn">
+                            {
+                                appData.tokens.map((tkn) => (
+                                    <div key={tkn._id} className="genTkns">
+                                        <h3>{tkn.token}</h3>
+                                        <div className="tknIcon" onClick={() => handleCopyText(tkn.token)}>
+                                            <AiFillCopy />
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    )
+                }
             </div>
         </div>
     )

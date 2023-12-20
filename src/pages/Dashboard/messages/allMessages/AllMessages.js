@@ -20,7 +20,7 @@ const AllMessages = () => {
         <div className="msgContent">
             <div className="newMessages">
                 <div className="newMsgHead">
-                    <h3>New messages({msgs.length})</h3>
+                    <h3>Unread messages ({messageData.filter(msg => !msg.read).length})</h3>
                     <div className="msgEdit">
                         <div onClick={handleMsgOpt1} className="msgEditMain">
                             <span>Edit</span>
@@ -50,7 +50,7 @@ const AllMessages = () => {
             </div>
             <div className="viewMessages">
                 <div className="viewMsgHead">
-                    <h3>Viewed</h3>
+                    <h3>Read messages</h3>
                     <div className="msgEdit">
                         <div onClick={handleMsgOpt2} className="msgEditMain">
                             <span>Edit</span>
@@ -62,7 +62,7 @@ const AllMessages = () => {
                         </div>
                     </div>
                 </div>
-                <div className={msgs.length > 8 ? "viewMsg length" : "viewMsg"}>
+                <div className={messageData.filter(msg => msg.read).length > 8 ? "viewMsg length" : "viewMsg"}>
                     {
                         messageData.filter(msg => msg.read)
                         .map((msg) => (

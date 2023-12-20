@@ -72,9 +72,9 @@ function OverView({ handleSideMenu }) {
                     <div className="overMsgHead">
                         <h3>New messages ({appData.messages.length})</h3>
                     </div>
-                    <div className={appData.messages.length > 8 ? "overMsg length" : "overMsg"}>
+                    <div className={appData.messages.filter(msg => !msg.read).length > 8 ? "overMsg length" : "overMsg"}>
                         {
-                            appData.messages.map((msg) => (
+                            appData.messages.filter(msg => !msg.read).map((msg) => (
                                 <Link key={msg._id} to={`messages/${msg._id}`} className="notMsg">
                                     <div className="msgSender">
                                         <h3>{msg.customerEmail}</h3>
