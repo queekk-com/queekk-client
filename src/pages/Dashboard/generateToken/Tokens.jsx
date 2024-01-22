@@ -16,7 +16,7 @@ function Tokens({ handleSideMenu }) {
     const handleCopyText = (text) => {
         navigator.clipboard.writeText(text)
         .then(() => {
-            toast.success(`Copied: ${text}`);
+            toast.success(`Token copied to clipboard!`);
         })
     }
 
