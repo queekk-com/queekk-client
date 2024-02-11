@@ -13,6 +13,8 @@
 
 .description {
   text-align: center;
+  display: flex;
+  flex-flow: column;
 }
 
 .description h1,
@@ -20,6 +22,12 @@
 .sampHead h1 {
   font-size: var(--lapHead1);
   margin-bottom: 1.5rem;
+}
+
+.landMain .description p {
+  max-width: 800px;
+  align-self: center;
+  word-break: break-word;
 }
 
 .description p,
@@ -85,11 +93,6 @@
   .benMain {
     grid-template-columns: 12fr;
     row-gap: 3rem;
-  }
-
-  .sampMain {
-    display: grid;
-    grid-template-columns: 12fr;
   }
 
   .samps {

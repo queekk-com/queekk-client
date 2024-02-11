@@ -12,12 +12,14 @@ function Header() {
         <img src={headLogo} alt="" />
       </div>
       <h1>
-        Experience the Future of <br /> Real-Time Interaction
+        Quicker Support, Happier Customers,
+        <br />
+        Faster Growth
       </h1>
       <p>
-        Discover <span className="highlight">QUEEKK</span>, where real-time
-        communication and lightning-fast responses come together to redefine the
-        way you connect and collaborate.
+        In today's competitive landscape, every second counts. With{" "}
+        <span className="highlight">Queekk</span>, your support becomes
+        lightning-fast, delighting customers and fueling your business growth.
       </p>
       <div className="headBtn">
         <button onClick={() => navigate("/signup")}>Get started</button>

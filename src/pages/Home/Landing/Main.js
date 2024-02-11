@@ -13,19 +13,18 @@ function Main() {
           Why use <span className="highlight">Queekk</span> ?
         </h1>
         <p>
-          <span className="highlight">QUEEKK</span> is your gateway to
-          real-time, lightning-fast interactions. Experience a future where
-          instant communication meets seamless collaboration. Whether it's live
-          chat, gaming, or collaborative work, our platform ensures you stay
-          connected in real time. Join us and unlock the power of rapid,
-          responsive communication. Welcome to the future of interaction with{" "}
-          <span className="highlight">QUEEKK</span>.
+          <span className="highlight">Queekk</span> offers a seamless
+          integration into websites, providing instant, accurate, and
+          personalized customer support. With customizable knowledge bases and
+          efficient performance, <span className="highlight">Queekk</span>{" "}
+          enhances user satisfaction, making it an invaluable tool for
+          businesses aiming to elevate their customer service experience.
         </p>
       </div>
 
       <div className="benefits">
         <div className="benHead">
-          <h1>Benefits of using our server</h1>
+          <h1>Benefits of using our service</h1>
         </div>
         <div className="benMain">
           <div className="ben">
@@ -34,9 +33,8 @@ function Main() {
             </div>
             <h3>Performance</h3>
             <p>
-              In most cases, the connection will be established with WebSocket,
-              providing a low-overhead communication channel between the server
-              and the client.
+              Queekk delivers rapid responses to user inquiries, ensuring a
+              seamless and efficient customer support experience.
             </p>
           </div>
           <div className="ben">
@@ -45,9 +43,8 @@ function Main() {
             </div>
             <h3>Reliable</h3>
             <p>
-              Rest assured! In case the WebSocket connection is not possible, it
-              will fall back to HTTP long-polling. And if the connection is
-              lost, the client will automatically try to reconnect.
+              Queekk consistently provides accurate assistance, minimizing
+              downtime and maintaining trust with users.
             </p>
           </div>
           <div className="ben">
@@ -56,8 +53,8 @@ function Main() {
             </div>
             <h3>Scalable</h3>
             <p>
-              Scale to multiple servers and send events to all connected clients
-              with ease.
+              Queekk effortlessly scales to accommodate increasing user demand,
+              ensuring consistent support quality regardless of workload.
             </p>
           </div>
         </div>
