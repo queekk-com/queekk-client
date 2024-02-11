@@ -19,7 +19,7 @@
 .formLogo h1 {
     font-size: 35px;
     color: var(--accentColor);
-    transition: all .1s ease-in-out;
+    transition: .7s;
 }
 
 .formLogo:hover h1 {

@@ -1,130 +1,135 @@
 .landMain {
-    width: 100%;
-    padding: 0 5rem;
-    color: var(--txtColor);
+  width: 100%;
+  padding: 0 5rem;
+  color: var(--txtColor);
 }
 
 .description,
 .benefits,
 .samples {
-    width: 100%;
-    margin-top: 6rem;
+  width: 100%;
+  margin-top: 6rem;
 }
 
 .description {
-    text-align: center;
+  text-align: center;
 }
 
 .description h1,
 .benHead h1,
 .sampHead h1 {
-    font-size: var(--lapHead1);
-    margin-bottom: 1.5rem;
+  font-size: var(--lapHead1);
+  margin-bottom: 1.5rem;
 }
 
 .description p,
 .ben p {
-    font-size: var(--lapParagraph1);
+  font-size: var(--lapParagraph1);
 }
 
 .benMain {
-    display: grid;
-    grid-template-columns: 4fr 4fr 4fr;
-    column-gap: 1rem;
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  column-gap: 1rem;
 }
 
 .ben {
-    text-align: center;
+  text-align: center;
 }
 
 .benIcon {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-    border-radius: 10px;
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--secondaryColor);
-    color: var(--accentColor);
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 10px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondaryColor);
+  color: var(--accentColor);
 }
 
 .ben h3 {
-    font-size: var(--lapHead3);
-    margin: 1rem 0 10px;
+  font-size: var(--lapHead3);
+  margin: 1rem 0 10px;
 }
 
 .sampMain {
-    display: flex;
-    gap: 24px;
-    justify-content: space-around;
-    align-self: center;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 20px;
 }
 
 .samps {
-    width: 650px;
-    height: 500px;
+  width: 650px;
+  height: 500px;
 }
 
 .samps img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1000px) {
+  .sampMain {
+    grid-template-columns: 100%;
+  }
 }
 
 @media (max-width: 575px) {
-    .landMain {
-        padding: 0 30px;
-    }
+  .landMain {
+    padding: 0 30px;
+  }
 
-    .benMain {
-        grid-template-columns: 12fr;
-        row-gap: 3rem;
-    }
+  .benMain {
+    grid-template-columns: 12fr;
+    row-gap: 3rem;
+  }
 
-    .sampMain {
-        display: grid;
-        grid-template-columns: 12fr;
-    }
+  .sampMain {
+    display: grid;
+    grid-template-columns: 12fr;
+  }
 
-    .samps {
-        width: 100%;
-    }
+  .samps {
+    width: 100%;
+  }
 
-    .samps:last-child {
-        margin-top: -3rem;
-    }
+  .samps:last-child {
+    margin-top: -3rem;
+  }
 }
 
 @media (max-width: 428px) {
-    .landMain {
-        padding: 0 20px;
-    }
+  .landMain {
+    padding: 0 20px;
+  }
 
-    .description,
-    .benefits,
-    .samples {
-        margin-top: 4rem;
-    }
+  .description,
+  .benefits,
+  .samples {
+    margin-top: 4rem;
+  }
 
-    .description h1,
-    .benHead h1,
-    .sampHead h1 {
-        font-size: var(--head1);
-    }
+  .description h1,
+  .benHead h1,
+  .sampHead h1 {
+    font-size: var(--head1);
+  }
 
-    .description p,
-    .ben p {
-        font-size: var(--paragraph1);
-    }
+  .description p,
+  .ben p {
+    font-size: var(--paragraph1);
+  }
 
-     .ben h3 {
-        font-size: var(--head3);
-    }
+  .ben h3 {
+    font-size: var(--head3);
+  }
 }
 
 @media (max-width: 375px) {
-    .landMain {
-        padding: 0 10px;
-    }
+  .landMain {
+    padding: 0 10px;
+  }
 }

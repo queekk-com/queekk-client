@@ -1,5 +1,9 @@
 .landing-page {
-    display: flex;
-    flex-flow: column;
-    gap: 24px;
+  display: flex;
+  flex-flow: column;
+  gap: 24px;
+}
+
+#queekk-container {
+  position: absolute;
 }

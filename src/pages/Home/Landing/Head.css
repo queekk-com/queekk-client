@@ -54,6 +54,16 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     color: #ffffff;
+    transition: all .2s ease;
+}
+
+.headBtn button:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.headBtn button:active {
+    transform: scale(0.99);
 }
 
 .headBtn button:last-child {
