@@ -1,0 +1,21 @@
+.documentation__overview {
+  flex: 100%;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.documentation__overview p {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .documentation__overview p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}

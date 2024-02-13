@@ -22,6 +22,13 @@ import Organisations from "./pages/Dashboard/organisations";
 import AllOrganizations from "./pages/Dashboard/organisations/allOrganizations/AllOrganizations";
 import Documentation from "./pages/Home/Documentation";
 import Home from "./pages/Home";
+import Introduction from "./pages/Home/Documentation/Introduction";
+import GettingStarted from "./pages/Home/Documentation/GettingStarted";
+import Integration from "./pages/Home/Documentation/Integration";
+import Usage from "./pages/Home/Documentation/Usage";
+import Customization from "./pages/Home/Documentation/Customization";
+import Troubleshooting from "./pages/Home/Documentation/Troubleshooting";
+import FAQs from "./pages/Home/Documentation/FAQs";
 
 export const ThemeContext = createContext(null);
 
@@ -61,7 +68,16 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="/" element={<Home />}>
               <Route index element={<LandingPage />} />
-              <Route path="documentation" element={<Documentation />} />
+              <Route path="documentation" element={<Documentation />}>
+                <Route index element={<Introduction />} />
+                <Route path="introduction" element={<Introduction />} />
+                <Route path="getting-started" element={<GettingStarted />} />
+                <Route path="integration" element={<Integration />} />
+                <Route path="usage" element={<Usage />} />
+                <Route path="customization" element={<Customization />} />
+                <Route path="troubleshooting" element={<Troubleshooting />} />
+                <Route path="faqs" element={<FAQs />} />
+              </Route>
             </Route>
             <Route
               path="dashboard"
