@@ -3,30 +3,6 @@
   flex-direction: column;
 }
 
-/* 
-<div className="documentation__nav">
-        <div className="documentation__nav__container">
-          <div className="documentation__nav__container__links">
-            {sections.map((section, index) => {
-              return (
-                <Link
-                  key={index}
-                  to={`/documentation/${section
-                    .toLowerCase()
-                    .replace(" ", "-")}`}
-                >
-                  {section}
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-        <div className="documentation__nav__container__title">
-          <small>Documentation/{formattedLoc}</small>
-        </div>
-      </div>
-*/
-
 .documentation__nav {
   display: flex;
   flex-flow: column;
