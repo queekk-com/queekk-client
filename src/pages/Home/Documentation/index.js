@@ -29,6 +29,7 @@ const Documentation = () => {
   ];
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     let formattedLocation = location.replace(/\/documentation\/*/, "");
     if (formattedLocation.slice(-1) === "/") {
       formattedLocation = formattedLocation.slice(0, -1);
@@ -61,7 +62,7 @@ const Documentation = () => {
     }
     if (formattedLocation === "faqs") {
       setPrev({ label: "Troubleshooting", path: "troubleshooting" });
-      setNext({ label: "FAQs", path: "faqs" });
+      setNext({ label: "FAQs", path: "" });
     }
   }, [location]);
 
@@ -130,7 +131,7 @@ const Documentation = () => {
             <button
               className="documentation__footer__nav__next"
               onClick={() => navigate(`/documentation/${next.path}`)}
-              disabled={next.label === "FAQs"}
+              disabled={next.path === "" && next.label === "FAQs"}
             >
               {next.label}
             </button>
