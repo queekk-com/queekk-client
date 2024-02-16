@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Queekk
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Quicker Support, Happier Customers, Faster Growth
 
-## Available Scripts
+In today's competitive landscape, every second counts. With Queekk, your support becomes lightning-fast, delighting customers and fueling your business growth.
 
-In the project directory, you can run:
+## Why use Queekk?
 
-### `yarn start`
+Queekk offers a seamless integration into websites, providing instant, accurate, and personalized customer support. With customizable knowledge bases and efficient performance, Queekk enhances user satisfaction, making it an invaluable tool for businesses aiming to elevate their customer service experience.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Benefits of using our service
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Performance**: Queekk delivers rapid responses to user inquiries, ensuring a seamless and efficient customer support experience.
+- **Reliable**: Queekk consistently provides accurate assistance, minimizing downtime and maintaining trust with users.
+- **Scalable**: Queekk effortlessly scales to accommodate increasing user demand, ensuring consistent support quality regardless of workload.
 
-### `yarn test`
+## Basic example
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queekk</title>
+    <link rel="stylesheet" href="http://localhost:8080/assistant.css" />
+    <script async src="http://localhost:8080/assistant/q-xxxxxxxxx"></script>
+</head>
+<body>
+    <div id="queekk-container"></div >
+</body>
+</html>
+```
 
-### `yarn build`
+```javascript
+import { useEffect } from "react";
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "http://localhost:8080/assistant.css";
+    document.head.appendChild(link);
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    const script = document.createElement("script");
+    script.src = "http://localhost:8080/assistant/q-xxxxxxxxx";
+    script.async = true;
+    document.head.appendChild(script);
+}, []);
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+return <div id="queekk-container" />;
+```
 
-### `yarn eject`
+## Documentation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [Getting Started](https://queekk.vercel.app/documentation/getting-started)
+- [Integration](https://queekk.vercel.app/documentation/integration)
+- [Usage](https://queekk.vercel.app/documentation/usage)
+- [GitHub Repo](https://github.com/queekk-com/queekk-client)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Help
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [Troubleshooting](https://queekk.vercel.app/documentation/troubleshooting)
+- [GitHub Discussions](https://github.com/queekk-com/queekk-client/discussions)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+© 2024 Queekk. All rights reserved.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This README provides a brief overview of Queekk and its features. For detailed documentation, tutorials, examples, and more, please visit [Queekk Documentation](https://queekk.vercel.app/documentation). If you encounter any issues or have questions, feel free to check out our [Help](https://queekk.vercel.app/documentation/troubleshooting) section for troubleshooting tips or reach out to us on [GitHub Discussions](https://github.com/queekk-com/queekk-client/discussions). Stay updated with the latest news and announcements on our [Blog](https://queekk.vercel.app/news/blog) and [Twitter](https://twitter.com/queekk). Thank you for choosing Queekk!
