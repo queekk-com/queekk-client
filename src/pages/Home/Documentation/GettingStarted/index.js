@@ -1,76 +1,96 @@
 import "./GettingStarted.css"
 
 const GettingStarted = () => {
+  const install = [
+    {
+      id: 1,
+      head: 'Sign Up',
+      text: 'Create an account on the Queekk platform to access the necessary tools and resources.'
+    },
+    {
+      id: 2,
+      head: 'Organization Setup',
+      text: 'Register your organization on Queekk and provide relevant information and documents about your company to     personalize the assistant\'s knowledge base.'
+    },
+    {
+      id: 3,
+      head: 'API key',
+      text: 'Obtain your OpenAI API key (free) and provide it to Queekk during the setup process. If you\'re using a paid plan, Queekk will use its keys.'
+    },
+    {
+      id: 4,
+      head: 'Token Generation',
+      text: 'Generate a token on Queekk\'s platform, which you\'ll need to place on your website to enable the integration.'
+    },
+    {
+      id: 5,
+      head: 'HTML Integration',
+      text: 'Add the Queekk script tag to your HTML code, along with the container div where Queekk will be displayed.'
+    },
+    {
+      id: 6,
+      head: 'React Integration',
+      text: 'If you\'re using React, follow the provided code example to integrate Queekk into your application.'
+    },
+  ]
   return (
     <div className="documentation__body">
-      <h3 className="documentation__section-title">Getting Started</h3>
-
-      <div className="documentation__content">
-        <h4 className="documentation__sub-title">
+      <div className="document-title">
+        <h1>Getting Started</h1>
+        <p>
           Welcome to Queekk! This section will guide you through the process of
-          getting started with Queekk on your website.
-        </h4>
+        </p>
+      </div>
 
-        <div className="documentation__sub-section__container">
-          <h5 className="documentation__sub-section-title">
+      <div className="documentation__sub">
+        <div className="doc__install">
+          <h1>
             Installation Guide
-          </h5>
+          </h1>
           <p>
             Before integrating Queekk into your website, you'll need to follow
             these steps:
           </p>
-          <ol>
-            <li>
-              Sign Up: Create an account on the Queekk platform to access the
-              necessary tools and resources.
-            </li>
-            <li>
-              Organization Setup: Register your organization on Queekk and
-              provide relevant information and documents about your company to
-              personalize the assistant's knowledge base.
-            </li>
-            <li>
-              API Key: Obtain your OpenAI API key (free) and provide it to
-              Queekk during the setup process. If you're using a paid plan,
-              Queekk will use its keys.
-            </li>
-            <li>
-              Token Generation: Generate a token on Queekk's platform, which
-              you'll need to place on your website to enable the integration.
-            </li>
-            <li>
-              HTML Integration: Add the Queekk script tag to your HTML code,
-              along with the container div where Queekk will be displayed.
-            </li>
-            <li>
-              React Integration: If you're using React, follow the provided code
-              example to integrate Queekk into your application.
-            </li>
-          </ol>
         </div>
+        <div className="doc__benefits">
+            {
+              install.map((ben) => (
+                <div key={ben.id} className="doc__ben">
+                  <div className="doc__ben__head">
+                    <h3>{ben.head}:</h3>
+                  </div>
+                  <div className="doc__ben__txt">
+                    <p>{ben.text}</p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+      </div>
 
-        <div className="documentation__sub-section__container">
-          <h5 className="documentation__sub-section-title">Basic Setup</h5>
-          <p>
-            Once you've completed the installation steps, you're ready to start
-            using Queekk on your website. The basic setup involves adding
-            Queekk's script tag to your website's HTML code and configuring any
-            desired customization options.
-          </p>
-        </div>
+      <div className="documentation__sub-section">
+        <h1>Basic Setup</h1>
+        <p>
+          Once you've completed the installation steps, you're ready to start
+          using Queekk on your website. The basic setup involves adding
+          Queekk's script tag to your website's HTML code and configuring any
+          desired customization options.
+        </p>
+      </div>
 
-        <div className="documentation__sub-section__container">
-          <h5 className="documentation__sub-section-title">
-            Configuration Options
-          </h5>
-          <p>
-            Queekk offers various configuration options to customize its
-            behavior and appearance on your website. You can set the theme,
-            configure a key press to open Queekk, set the first message users
-            see, and define main colors to match your brand identity.
-          </p>
-        </div>
+      <div className="documentation__sub-section">
+        <h1>
+          Configuration Options
+        </h1>
+        <p>
+          Queekk offers various configuration options to customize its
+          behavior and appearance on your website. You can set the theme,
+          configure a key press to open Queekk, set the first message users
+          see, and define main colors to match your brand identity.
+        </p>
+      </div>
 
+      <div className="last__page">
         <p className="documentation__conclusion">
           Now that you've completed the setup and configuration, you're ready to
           integrate Queekk into your website and start providing instant,

@@ -6,7 +6,11 @@
 
 .description,
 .benefits,
-.samples {
+.samples,
+.documentation__content,
+.last__page,
+.documentation__sub-section,
+.documentation__sub {
   width: 100%;
   margin-top: 6rem;
 }
@@ -19,7 +23,11 @@
 
 .description h1,
 .benHead h1,
-.sampHead h1 {
+.sampHead h1,
+.document-title h1,
+.document__title__head h1,
+.doc__install h1,
+.documentation__sub-section h1 {
   font-size: var(--lapHead1);
   margin-bottom: 1.5rem;
 }
@@ -31,8 +39,14 @@
 }
 
 .description p,
-.ben p {
+.ben p,
+.document-title p {
   font-size: var(--lapParagraph1);
+}
+
+.benHead {
+  width: 100%;
+  text-align: center;
 }
 
 .benMain {
@@ -117,7 +131,8 @@
 
   .description h1,
   .benHead h1,
-  .sampHead h1 {
+  .sampHead h1,
+  .document-title h1 {
     font-size: var(--head1);
   }
 

@@ -4,6 +4,7 @@ nav,
 .navUl,
 .logAndSearch,
 .navUl li a,
+.document,
 .logOrSign {
   display: flex;
   align-items: center;
@@ -168,6 +169,42 @@ nav {
   cursor: pointer;
 }
 
+.document {
+  cursor: pointer;
+  column-gap: 5px;
+}
+
+.doc-links {
+  position: absolute;
+  top: 50px;
+  left: -100vw;
+  width: 200px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondaryColor);
+  border-radius: 0 0 10px 10px;
+  transition: left .7s;
+}
+
+.doc-links.active {
+  left: 10%;
+}
+
+.doc-list {
+  padding: 10px;
+  transition: background-color .7s;
+}
+
+.doc-list a {
+  text-decoration: none;
+  color: white !important;
+}
+
+.doc-list:hover {
+  background-color: var(--accentColor);
+}
+
 @media (max-width: 1120px) {
   .logAndSearch input {
     display: none;
@@ -215,7 +252,12 @@ nav {
 
   .navUl li {
     height: auto;
-    line-height: 70px;
+    width: 100%;
+    line-height: 60px;
+  }
+
+  .navUl li a {
+    height: fit-content;
   }
 
   .searchCont.active,
@@ -314,6 +356,24 @@ nav {
 
   .side a {
     width: 100%;
+  }
+
+  .doc-links {
+    position: static;
+    width: 100%;
+    border: 0;
+  }
+
+  .doc-list {
+    padding: 0;
+    width: 100%;
+  }
+
+  .doc-list a {
+    line-height: 35px;
+    width: 100%;
+    padding: 0 10px;
+    font-size: 14px !important;
   }
 }
 
