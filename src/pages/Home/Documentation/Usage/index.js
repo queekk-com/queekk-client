@@ -5,7 +5,7 @@ const Usage = () => {
 
   return (
     <div className="documentation__body">
-      <div className="document__title">
+      <div className="document-title">
         <h1>Usage</h1>
         <p>
           Once Queekk is integrated into your website or application, you can

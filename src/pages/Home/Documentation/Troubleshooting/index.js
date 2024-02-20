@@ -30,7 +30,7 @@ const Troubleshooting = () => {
   ]
   return (
     <div className="documentation__body">
-      <div className="document__title">
+      <div className="document-title">
         <h1>Troubleshooting</h1>
         <p>
           In this section, we'll cover common issues you may encounter when

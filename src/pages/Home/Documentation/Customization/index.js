@@ -4,7 +4,7 @@ import CodeBlock from "../../../../components/CodeBlock"; // Assuming you have a
 const Customization = () => {
   return (
     <div className="documentation__body">
-      <div className="document__title">
+      <div className="document-title">
         <h1>Customization</h1>
         <p>
           Queekk offers a range of customization options to tailor its
