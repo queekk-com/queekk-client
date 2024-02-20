@@ -112,7 +112,9 @@ const FAQs = () => {
             </p>
           </li>
         </ol>
+      </div>
 
+      <div className="last__page">
         <p>
           If you have any additional questions or concerns about Queekk, don't
           hesitate to reach out to our support team for assistance. We're here

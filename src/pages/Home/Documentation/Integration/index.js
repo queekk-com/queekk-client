@@ -129,7 +129,7 @@ export default MyComponent;`}
       </div>
 
       <div className="last__page">
-        <p className="documentation__conclusion">
+        <p>
           Next, we'll explore how to interact with Queekk and customize its
           behavior to suit your needs.
         </p>

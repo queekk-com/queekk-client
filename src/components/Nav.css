@@ -361,7 +361,15 @@ nav {
   .doc-links {
     position: static;
     width: 100%;
+    max-height: 0;
+    overflow: hidden;
     border: 0;
+    transition: max-height .7s;
+  }
+
+  .doc-links.active {
+    height: auto;
+    max-height: 300px;
   }
 
   .doc-list {

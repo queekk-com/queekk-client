@@ -113,7 +113,7 @@ const Introduction = () => {
       </div>
 
       <div className="last__page">
-        <p className="documentation__conclusion">
+        <p>
           Whether you're a small business or a large enterprise, Queekk empowers
           you to deliver exceptional customer support experiences, driving user
           satisfaction and loyalty. Get started with Queekk today and take your

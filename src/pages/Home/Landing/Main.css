@@ -125,7 +125,11 @@
 
   .description,
   .benefits,
-  .samples {
+  .samples,
+  .documentation__content,
+  .last__page,
+  .documentation__sub-section,
+  .documentation__sub {
     margin-top: 4rem;
   }
 

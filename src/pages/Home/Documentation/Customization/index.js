@@ -90,7 +90,7 @@ const Customization = () => {
         </div>
       </div>
       <div className="last__page">
-      <p className="documentation__conclusion">
+      <p>
           By leveraging these customization options, you can seamlessly
           integrate Queekk into your website while maintaining brand consistency
           and enhancing the user experience. Experiment with different

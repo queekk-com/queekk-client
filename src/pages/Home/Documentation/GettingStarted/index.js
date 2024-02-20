@@ -42,56 +42,62 @@ const GettingStarted = () => {
         </p>
       </div>
 
-      <div className="documentation__sub">
-        <div className="doc__install">
-          <h1>
+      <div className="documentation__content">
+      <div className="documentation__sub-section__integrate">
+        <div className="integrate__title">
+          <h3>
             Installation Guide
-          </h1>
+          </h3>
           <p>
             Before integrating Queekk into your website, you'll need to follow
             these steps:
           </p>
         </div>
         <div className="doc__benefits">
-            {
-              install.map((ben) => (
-                <div key={ben.id} className="doc__ben">
-                  <div className="doc__ben__head">
-                    <h3>{ben.head}:</h3>
-                  </div>
-                  <div className="doc__ben__txt">
-                    <p>{ben.text}</p>
-                  </div>
+          {
+            install.map((ben) => (
+              <div key={ben.id} className="doc__ben">
+                <div className="doc__ben__head">
+                  <h3>{ben.head}:</h3>
                 </div>
-              ))
-            }
+                <div className="doc__ben__txt">
+                  <p>{ben.text}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+        <div className="documentation__sub-section__integrate">
+          <div className="integrate__title">
+            <h3>Basic Setup</h3>
+            <p>
+              Once you've completed the installation steps, you're ready to start
+              using Queekk on your website. The basic setup involves adding
+              Queekk's script tag to your website's HTML code and configuring any
+              desired customization options.
+            </p>
           </div>
-      </div>
+        </div>
 
-      <div className="documentation__sub-section">
-        <h1>Basic Setup</h1>
-        <p>
-          Once you've completed the installation steps, you're ready to start
-          using Queekk on your website. The basic setup involves adding
-          Queekk's script tag to your website's HTML code and configuring any
-          desired customization options.
-        </p>
-      </div>
-
-      <div className="documentation__sub-section">
-        <h1>
-          Configuration Options
-        </h1>
-        <p>
-          Queekk offers various configuration options to customize its
-          behavior and appearance on your website. You can set the theme,
-          configure a key press to open Queekk, set the first message users
-          see, and define main colors to match your brand identity.
-        </p>
+        <div className="documentation__sub-section__integrate">
+          <div className="integrate__title">
+            <h3>
+              Configuration Options
+            </h3>
+            <p>
+              Queekk offers various configuration options to customize its
+              behavior and appearance on your website. You can set the theme,
+              configure a key press to open Queekk, set the first message users
+              see, and define main colors to match your brand identity.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="last__page">
-        <p className="documentation__conclusion">
+        <p>
           Now that you've completed the setup and configuration, you're ready to
           integrate Queekk into your website and start providing instant,
           personalized support to your users. Next, we'll explore how to
