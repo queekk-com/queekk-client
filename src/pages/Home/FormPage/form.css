@@ -107,6 +107,9 @@ input[type="checkbox"] {
 .frmBtn {
     width: 100%;
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .frmBtn button {
@@ -138,7 +141,7 @@ input[type="checkbox"] {
 
 .frmAlready {
     width: 100%;
-    text-align: start;
+    text-align: center;
     margin-top: 16px;
     color: var(--txtColor);
 }
