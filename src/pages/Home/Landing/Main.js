@@ -8,7 +8,6 @@ import CodeBlock from "../../../components/CodeBlock";
 import World from "../../../assets/svgs/world.svg";
 
 function Main() {
-
   const benefitsRef = useRef(null);
 
   useGSAP({
@@ -23,12 +22,12 @@ function Main() {
     y: 0,
     duration: 1,
   });
-  
 
   return (
     <div className="landMain">
-
-      <img src={World} alt="World" className="world__image" />
+      <div className="world__image__container">
+        <img src={World} alt="World" className="world__image" />
+      </div>
 
       <div className="description">
         <h1>
