@@ -46,7 +46,7 @@ const Nav = () => {
               <AiOutlineCaretDown />
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/server-api">
               <span>Server Api</span>
             </NavLink>
@@ -60,7 +60,7 @@ const Nav = () => {
             <NavLink to="/pricing">
               <span>Pricing</span>
             </NavLink>
-          </li>
+          </li> */}
           <div className="logOrSign side">
             <Link to="/login">Log in</Link>
             <Link to="/signup">Sign up</Link>
