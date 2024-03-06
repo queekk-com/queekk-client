@@ -1,13 +1,35 @@
-import React from "react";
 import "./Main.css";
+import React, { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 import { IoRocketSharp } from "react-icons/io5";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { BiNetworkChart } from "react-icons/bi";
 import CodeBlock from "../../../components/CodeBlock";
+import World from "../../../assets/svgs/world.svg";
 
 function Main() {
+
+  const benefitsRef = useRef(null);
+
+  useGSAP({
+    targets: benefitsRef.current,
+    scrollTrigger: {
+      trigger: benefitsRef.current,
+      start: "top 80%",
+      end: "bottom 80%",
+      toggleActions: "play none none none",
+    },
+    opacity: 1,
+    y: 0,
+    duration: 1,
+  });
+  
+
   return (
     <div className="landMain">
+
+      <img src={World} alt="World" className="world__image" />
+
       <div className="description">
         <h1>
           Why use <span className="highlight">Queekk</span> ?
@@ -26,7 +48,7 @@ function Main() {
         <div className="benHead">
           <h1>Benefits of using our service</h1>
         </div>
-        <div className="benMain">
+        <div className="benMain" ref={benefitsRef}>
           <div className="ben">
             <div className="benIcon">
               <IoRocketSharp />

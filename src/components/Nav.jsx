@@ -1,11 +1,12 @@
-import { useState } from "react";
 import "./Nav.css";
+import { useState } from "react";
 import logoImg from "../assets/svgs/logo.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AiOutlineCaretDown } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { BiSearchAlt } from "react-icons/bi";
+import { GiBullseye } from "react-icons/gi";
 
 const Nav = () => {
   //handling sidebar
@@ -25,7 +26,7 @@ const Nav = () => {
   const [openDoc, setOpenDoc] = useState(false);
   const docDisplay = () => {
     setOpenDoc(!openDoc);
-  }
+  };
 
   return (
     <nav>
@@ -49,104 +50,110 @@ const Nav = () => {
           <li className="doc">
             <div className="document" onClick={docDisplay}>
               <span>Docs</span>
-              <AiOutlineCaretDown />
+              <GiBullseye style={{transform: "rotate(150deg)"}} />
             </div>
             <div className={openDoc ? "doc-links active" : "doc-links"}>
-              <div onClick={() => {
-                if (window.innerWidth <= 575) {
-                  handleSideBar();
-                  setOpenDoc(!openDoc);
-                }
-                else {
-                  docDisplay()
-                }
-              }
-              }
-                className="doc-list">
+              <div
+                onClick={() => {
+                  if (window.innerWidth <= 575) {
+                    handleSideBar();
+                    setOpenDoc(!openDoc);
+                  } else {
+                    docDisplay();
+                  }
+                }}
+                className="doc-list"
+              >
                 <NavLink to="/documentation/introduction">
                   <span>Introduction</span>
                 </NavLink>
               </div>
-              <div onClick={() => {
-                if (window.innerWidth <= 575) {
-                  handleSideBar();
-                  setOpenDoc(!openDoc);
-                }
-                else {
-                  docDisplay()
-                }
-              }
-              } className="doc-list">
+              <div
+                onClick={() => {
+                  if (window.innerWidth <= 575) {
+                    handleSideBar();
+                    setOpenDoc(!openDoc);
+                  } else {
+                    docDisplay();
+                  }
+                }}
+                className="doc-list"
+              >
                 <NavLink to="/documentation/getting-started">
                   <span>Getting Started</span>
                 </NavLink>
               </div>
-              <div onClick={() => {
-                if (window.innerWidth <= 575) {
-                  handleSideBar();
-                  setOpenDoc(!openDoc);
-                }
-                else {
-                  docDisplay()
-                }
-              }
-              } className="doc-list">
+              <div
+                onClick={() => {
+                  if (window.innerWidth <= 575) {
+                    handleSideBar();
+                    setOpenDoc(!openDoc);
+                  } else {
+                    docDisplay();
+                  }
+                }}
+                className="doc-list"
+              >
                 <NavLink to="/documentation/integration">
                   <span>Integration</span>
                 </NavLink>
               </div>
-              <div onClick={() => {
-                if (window.innerWidth <= 575) {
-                  handleSideBar();
-                  setOpenDoc(!openDoc);
-                }
-                else {
-                  docDisplay()
-                }
-              }
-              } className="doc-list">
+              <div
+                onClick={() => {
+                  if (window.innerWidth <= 575) {
+                    handleSideBar();
+                    setOpenDoc(!openDoc);
+                  } else {
+                    docDisplay();
+                  }
+                }}
+                className="doc-list"
+              >
                 <NavLink to="/documentation/usage">
                   <span>Usage</span>
                 </NavLink>
               </div>
-              <div onClick={() => {
-                if (window.innerWidth <= 575) {
-                  handleSideBar();
-                  setOpenDoc(!openDoc);
-                }
-                else {
-                  docDisplay()
-                }
-              }
-              } className="doc-list">
+              <div
+                onClick={() => {
+                  if (window.innerWidth <= 575) {
+                    handleSideBar();
+                    setOpenDoc(!openDoc);
+                  } else {
+                    docDisplay();
+                  }
+                }}
+                className="doc-list"
+              >
                 <NavLink to="/documentation/customization">
                   <span>Customization</span>
                 </NavLink>
               </div>
-              <div onClick={() => {
-                if (window.innerWidth <= 575) {
-                  handleSideBar();
-                  setOpenDoc(!openDoc);
-                }
-                else {
-                  docDisplay()
-                }
-              }
-              } className="doc-list">
+              <div
+                onClick={() => {
+                  if (window.innerWidth <= 575) {
+                    handleSideBar();
+                    setOpenDoc(!openDoc);
+                  } else {
+                    docDisplay();
+                  }
+                }}
+                className="doc-list"
+              >
                 <NavLink to="/documentation/troubleshooting">
                   <span>Troubleshooting</span>
                 </NavLink>
               </div>
-              <div onClick={() => {
-                if (window.innerWidth <= 575) {
-                  handleSideBar();
-                  setOpenDoc(!openDoc);
-                }
-                else {
-                  docDisplay()
-                }
-              }
-              } className="doc-list">
+              <div
+                onClick={() => {
+                  if (window.innerWidth <= 575) {
+                    handleSideBar();
+                    setOpenDoc(!openDoc);
+                  } else {
+                    docDisplay();
+                  }
+                }}
+                className="doc-list"
+              >
                 <NavLink to="/documentation/faqs">
                   <span>Faqs</span>
                 </NavLink>
