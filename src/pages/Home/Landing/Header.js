@@ -7,7 +7,7 @@ function Header() {
   const navigate = useNavigate();
 
   return (
-    <div className="landHead">
+    <div className="land__Head">
       <div className="logo__container">
         <img src={headLogo} alt="" />
       </div>

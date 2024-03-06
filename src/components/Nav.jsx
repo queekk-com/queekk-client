@@ -21,6 +21,12 @@ const Nav = () => {
     setOpenSearch(!openSearch);
   };
 
+  // Opening the doc in media screen
+  const [openDoc, setOpenDoc] = useState(false);
+  const docDisplay = () => {
+    setOpenDoc(!openDoc);
+  }
+
   return (
     <nav>
       <div className="navLinks">
@@ -40,11 +46,112 @@ const Nav = () => {
           <div onClick={handleSideBar} className="closeBar">
             <span>X</span>
           </div>
-          <li>
-            <NavLink to="/documentation">
+          <li className="doc">
+            <div className="document" onClick={docDisplay}>
               <span>Docs</span>
               <AiOutlineCaretDown />
-            </NavLink>
+            </div>
+            <div className={openDoc ? "doc-links active" : "doc-links"}>
+              <div onClick={() => {
+                if (window.innerWidth <= 575) {
+                  handleSideBar();
+                  setOpenDoc(!openDoc);
+                }
+                else {
+                  docDisplay()
+                }
+              }
+              }
+                className="doc-list">
+                <NavLink to="/documentation/introduction">
+                  <span>Introduction</span>
+                </NavLink>
+              </div>
+              <div onClick={() => {
+                if (window.innerWidth <= 575) {
+                  handleSideBar();
+                  setOpenDoc(!openDoc);
+                }
+                else {
+                  docDisplay()
+                }
+              }
+              } className="doc-list">
+                <NavLink to="/documentation/getting-started">
+                  <span>Getting Started</span>
+                </NavLink>
+              </div>
+              <div onClick={() => {
+                if (window.innerWidth <= 575) {
+                  handleSideBar();
+                  setOpenDoc(!openDoc);
+                }
+                else {
+                  docDisplay()
+                }
+              }
+              } className="doc-list">
+                <NavLink to="/documentation/integration">
+                  <span>Integration</span>
+                </NavLink>
+              </div>
+              <div onClick={() => {
+                if (window.innerWidth <= 575) {
+                  handleSideBar();
+                  setOpenDoc(!openDoc);
+                }
+                else {
+                  docDisplay()
+                }
+              }
+              } className="doc-list">
+                <NavLink to="/documentation/usage">
+                  <span>Usage</span>
+                </NavLink>
+              </div>
+              <div onClick={() => {
+                if (window.innerWidth <= 575) {
+                  handleSideBar();
+                  setOpenDoc(!openDoc);
+                }
+                else {
+                  docDisplay()
+                }
+              }
+              } className="doc-list">
+                <NavLink to="/documentation/customization">
+                  <span>Customization</span>
+                </NavLink>
+              </div>
+              <div onClick={() => {
+                if (window.innerWidth <= 575) {
+                  handleSideBar();
+                  setOpenDoc(!openDoc);
+                }
+                else {
+                  docDisplay()
+                }
+              }
+              } className="doc-list">
+                <NavLink to="/documentation/troubleshooting">
+                  <span>Troubleshooting</span>
+                </NavLink>
+              </div>
+              <div onClick={() => {
+                if (window.innerWidth <= 575) {
+                  handleSideBar();
+                  setOpenDoc(!openDoc);
+                }
+                else {
+                  docDisplay()
+                }
+              }
+              } className="doc-list">
+                <NavLink to="/documentation/faqs">
+                  <span>Faqs</span>
+                </NavLink>
+              </div>
+            </div>
           </li>
           {/* <li>
             <NavLink to="/server-api">
