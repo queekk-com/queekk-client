@@ -1,6 +1,8 @@
 import React from "react";
 import CodeBlock from "../../../../components/CodeBlock"; // Assuming you have a component for displaying code blocks
 
+const SERVER = process.env.REACT_APP_SERVER;
+
 const Integration = () => {
   return (
     <div className="documentation__body">
@@ -39,8 +41,8 @@ const Integration = () => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Queekk</title>
-    <link rel="stylesheet" href="http://localhost:8080/assistant.css" />
-    <script async src="http://localhost:8080/assistant/q-xxxxxxxxx" ></script>
+    <link rel="stylesheet" href="${SERVER}/assistant.css" />
+    <script async src="${SERVER}/assistant/q-xxxxxxxxx" ></script>
 </head>
 <body>
     <div id="queekk-container"></div >
@@ -92,11 +94,11 @@ const MyComponent = () => {
     useEffect(() => {
         const link = document.createElement("link");
         link.rel = "stylesheet";
-        link.href = "http://localhost:8080/assistant.css";
+        link.href = "${SERVER}/assistant.css";
         document.head.appendChild(link);
 
         const script = document.createElement("script");
-        script.src = "http://localhost:8080/assistant/q-xxxxxxxxx";
+        script.src = "${SERVER}/assistant/q-xxxxxxxxx";
         script.async = true;
         document.head.appendChild(script);
 

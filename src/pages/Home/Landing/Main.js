@@ -7,6 +7,8 @@ import { BiNetworkChart } from "react-icons/bi";
 import CodeBlock from "../../../components/CodeBlock";
 import World from "../../../assets/svgs/world.svg";
 
+const SERVER = process.env.REACT_APP_SERVER;
+
 function Main() {
   const benefitsRef = useRef(null);
 
@@ -93,8 +95,8 @@ function Main() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Queekk</title>
-    <link rel="stylesheet" href="http://localhost:8080/assistant.css" />
-    <script async src="http://localhost:8080/assistant/q-xxxxxxxxx" ></script>
+    <link rel="stylesheet" href="${SERVER}/assistant.css" />
+    <script async src="${SERVER}/assistant/q-xxxxxxxxx" ></script>
 </head>
 <body>
     <div id="queekk-container"></div >
@@ -107,11 +109,11 @@ function Main() {
 useEffect(() => {
     const link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = "http://localhost:8080/assistant.css";
+    link.href = "${SERVER}/assistant.css";
     document.head.appendChild(link);
 
     const script = document.createElement("script");
-    script.src = "http://localhost:8080/assistant/q-xxxxxxxxx";
+    script.src = "${SERVER}/assistant/q-xxxxxxxxx";
     script.async = true;
     document.head.appendChild(script);
 }, []);

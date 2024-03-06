@@ -1,5 +1,5 @@
 import "./Customization.css";
-import CodeBlock from "../../../../components/CodeBlock"; // Assuming you have a component for displaying code blocks
+import CodeBlock from "../../../../components/CodeBlock";
 
 const Customization = () => {
   return (
