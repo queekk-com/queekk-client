@@ -28,14 +28,19 @@ function Main() {
 
   return (
     <div className="landMain">
-      <div className="world__image__container">
+      <motion.div
+        initial={{ rotateY: -100, opacity: 0 }}
+        transition={{ delay: .6, duration: 1, type: 'tween' }}
+        whileInView={{ rotateY: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        className="world__image__container">
         <img src={World} alt="World" className="world__image" />
-      </div>
+      </motion.div>
 
       <div className="description">
         <motion.h1
           initial={{ x: -100, opacity: 0 }}
-          transition={{ delay: .6, duration: 1, type: 'tween' }}
+          transition={{ delay: .8, duration: 1, type: 'tween' }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
         >
@@ -43,7 +48,7 @@ function Main() {
         </motion.h1>
         <motion.p
           initial={{ x: 100, opacity: 0 }}
-          transition={{ delay: .6, duration: 1, type: 'tween' }}
+          transition={{ delay: 1, duration: 1, type: 'tween' }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
         >
@@ -68,7 +73,7 @@ function Main() {
         <div className="benMain" ref={benefitsRef}>
           <motion.div
             initial={{ rotateX: -100, opacity: 0 }}
-            transition={{ delay: .6, duration: 1, type: 'tween' }}
+            transition={{ delay: .8, duration: 1, type: 'tween' }}
             whileInView={{ rotateX: 0, opacity: 1 }}
             viewport={{ once: true }}
             className="ben">
@@ -83,7 +88,7 @@ function Main() {
           </motion.div>
           <motion.div
             initial={{ rotateX: -100, opacity: 0 }}
-            transition={{ delay: .6, duration: 1, type: 'tween' }}
+            transition={{ delay: .9, duration: 1, type: 'tween' }}
             whileInView={{ rotateX: 0, opacity: 1 }}
             viewport={{ once: true }}
             className="ben">
@@ -98,7 +103,7 @@ function Main() {
           </motion.div>
           <motion.div
             initial={{ rotateX: -100, opacity: 0 }}
-            transition={{ delay: .6, duration: 1, type: 'tween' }}
+            transition={{ delay: 1, duration: 1, type: 'tween' }}
             whileInView={{ rotateX: 0, opacity: 1 }}
             viewport={{ once: true }}
             className="ben">
@@ -124,7 +129,12 @@ function Main() {
           <h1>Basic example</h1>
         </motion.div>
         <div className="sampMain">
-          <CodeBlock language="html">
+          <motion.CodeBlock
+            initial={{ x: 100, opacity: 0 }}
+            transition={{ delay: .6, duration: 1, type: 'tween' }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            language="html">
             {`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -138,8 +148,13 @@ function Main() {
     <div id="queekk-container"></div >
 </body>
 </html>`}
-          </CodeBlock>
-          <CodeBlock language="javascript">
+          </motion.CodeBlock>
+          <motion.CodeBlock
+            initial={{ x: -100, opacity: 0 }}
+            transition={{ delay: .6, duration: 1, type: 'tween' }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            language="javascript">
             {`import { useEffect } from "react";
 
 useEffect(() => {
@@ -156,7 +171,7 @@ useEffect(() => {
 
 return <div id="queekk-container" />
 `}
-          </CodeBlock>
+          </motion.CodeBlock>
         </div>
       </div>
     </div >

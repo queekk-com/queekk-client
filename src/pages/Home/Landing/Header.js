@@ -19,7 +19,7 @@ function Header() {
       </motion.div>
       <motion.h1
         initial={{ x: -100, opacity: 0 }}
-        transition={{ delay: .6, duration: 1, type: 'tween' }}
+        transition={{ delay: .8, duration: 1, type: 'tween' }}
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
       >
@@ -29,7 +29,7 @@ function Header() {
       </motion.h1>
       <motion.p
         initial={{ x: 100, opacity: 0 }}
-        transition={{ delay: .6, duration: 1, type: 'tween' }}
+        transition={{ delay: 1, duration: 1, type: 'tween' }}
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
       >
