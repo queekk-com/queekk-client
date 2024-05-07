@@ -6,6 +6,7 @@ import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { BiNetworkChart } from "react-icons/bi";
 import CodeBlock from "../../../components/CodeBlock";
 import World from "../../../assets/svgs/world.svg";
+import { motion } from 'framer-motion';
 
 const SERVER = process.env.REACT_APP_SERVER;
 
@@ -32,25 +33,45 @@ function Main() {
       </div>
 
       <div className="description">
-        <h1>
+        <motion.h1
+          initial={{ x: -100, opacity: 0 }}
+          transition={{ delay: .6, duration: 1, type: 'tween' }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+        >
           Why use <span className="highlight">Queekk</span> ?
-        </h1>
-        <p>
+        </motion.h1>
+        <motion.p
+          initial={{ x: 100, opacity: 0 }}
+          transition={{ delay: .6, duration: 1, type: 'tween' }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+        >
           <span className="highlight">Queekk</span> offers a seamless
           integration into websites, providing instant, accurate, and
           personalized customer support. With customizable knowledge bases and
           efficient performance, <span className="highlight">Queekk</span>{" "}
           enhances user satisfaction, making it an invaluable tool for
           businesses aiming to elevate their customer service experience.
-        </p>
+        </motion.p>
       </div>
 
       <div className="benefits">
-        <div className="benHead">
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          transition={{ delay: .6, duration: 1, type: 'tween' }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          className="benHead">
           <h1>Benefits of using our service</h1>
-        </div>
+        </motion.div>
         <div className="benMain" ref={benefitsRef}>
-          <div className="ben">
+          <motion.div
+            initial={{ rotateX: -100, opacity: 0 }}
+            transition={{ delay: .6, duration: 1, type: 'tween' }}
+            whileInView={{ rotateX: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="ben">
             <div className="benIcon">
               <IoRocketSharp />
             </div>
@@ -59,8 +80,13 @@ function Main() {
               Queekk delivers rapid responses to user inquiries, ensuring a
               seamless and efficient customer support experience.
             </p>
-          </div>
-          <div className="ben">
+          </motion.div>
+          <motion.div
+            initial={{ rotateX: -100, opacity: 0 }}
+            transition={{ delay: .6, duration: 1, type: 'tween' }}
+            whileInView={{ rotateX: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="ben">
             <div className="benIcon">
               <AiOutlineSafetyCertificate />
             </div>
@@ -69,8 +95,13 @@ function Main() {
               Queekk consistently provides accurate assistance, minimizing
               downtime and maintaining trust with users.
             </p>
-          </div>
-          <div className="ben">
+          </motion.div>
+          <motion.div
+            initial={{ rotateX: -100, opacity: 0 }}
+            transition={{ delay: .6, duration: 1, type: 'tween' }}
+            whileInView={{ rotateX: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="ben">
             <div className="benIcon">
               <BiNetworkChart />
             </div>
@@ -79,14 +110,19 @@ function Main() {
               Queekk effortlessly scales to accommodate increasing user demand,
               ensuring consistent support quality regardless of workload.
             </p>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </div >
+      </div >
 
       <div className="samples">
-        <div className="sampHead">
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          transition={{ delay: .6, duration: 1, type: 'tween' }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          className="sampHead">
           <h1>Basic example</h1>
-        </div>
+        </motion.div>
         <div className="sampMain">
           <CodeBlock language="html">
             {`<!DOCTYPE html>
@@ -123,7 +159,7 @@ return <div id="queekk-container" />
           </CodeBlock>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
