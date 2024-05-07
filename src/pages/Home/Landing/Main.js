@@ -129,12 +129,7 @@ function Main() {
           <h1>Basic example</h1>
         </motion.div>
         <div className="sampMain">
-          <motion.CodeBlock
-            initial={{ x: 100, opacity: 0 }}
-            transition={{ delay: .6, duration: 1, type: 'tween' }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            language="html">
+          <CodeBlock language="html">
             {`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -148,13 +143,8 @@ function Main() {
     <div id="queekk-container"></div >
 </body>
 </html>`}
-          </motion.CodeBlock>
-          <motion.CodeBlock
-            initial={{ x: -100, opacity: 0 }}
-            transition={{ delay: .6, duration: 1, type: 'tween' }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            language="javascript">
+          </CodeBlock>
+          <CodeBlock language="javascript">
             {`import { useEffect } from "react";
 
 useEffect(() => {
@@ -171,7 +161,7 @@ useEffect(() => {
 
 return <div id="queekk-container" />
 `}
-          </motion.CodeBlock>
+          </CodeBlock>
         </div>
       </div>
     </div >
