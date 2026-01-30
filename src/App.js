@@ -30,6 +30,8 @@ import Troubleshooting from "./pages/Home/Documentation/Troubleshooting";
 import FAQs from "./pages/Home/Documentation/FAQs";
 import Features from "./pages/Home/Features";
 import Pricing from "./pages/Home/Pricing";
+import Terms from "./pages/Home/Terms";
+import Privacy from "./pages/Home/Privacy";
 
 export const ThemeContext = createContext(null);
 
@@ -71,6 +73,8 @@ function App() {
               <Route index element={<LandingPage />} />
               <Route path="features" element={<Features />} />
               <Route path="pricing" element={<Pricing />} />
+              <Route path="terms" element={<Terms />} />
+              <Route path="privacy" element={<Privacy />} />
               <Route path="documentation" element={<Documentation />}>
                 <Route index element={<Introduction />} />
                 <Route path="introduction" element={<Introduction />} />

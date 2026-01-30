@@ -64,8 +64,8 @@ function Footer() {
         <div className="bottom-content">
           <p>© {currentYear} Queekk. All rights reserved.</p>
           <div className="legal-links">
-            <Link to="/">Privacy Policy</Link>
-            <Link to="/">Terms of Service</Link>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms of Service</Link>
           </div>
         </div>
       </div>

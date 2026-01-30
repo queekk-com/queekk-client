@@ -113,7 +113,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  right: 0;
+  width: 100%;
   background: #1e1e1e;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem;
@@ -124,6 +124,7 @@
   z-index: 100;
   max-height: 60vh;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
 /* Override existing styles to fit new layout */
