@@ -44,7 +44,7 @@ function DisplayDashboard ({ openMenu, handleSideMenu }) {
                 });
             })
         }
-    }, [])
+    }, [dispatch, navigate])
     return (
         <>
             {

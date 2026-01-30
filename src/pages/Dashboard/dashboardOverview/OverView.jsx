@@ -3,9 +3,6 @@ import logoImg from '../../../assets/svgs/logo.svg';
 import { Link } from 'react-router-dom';
 import { AiFillCopy } from 'react-icons/ai';
 import './overView.css';
-import msgs from '../messages/data/messages-data';
-import orgInfo from '../organisations/data/organizations-data';
-import tokenData from '../generateToken/data/token-data';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useSelector } from 'react-redux';
 

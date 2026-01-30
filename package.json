@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "24.x"
+    "node": ">=24.x"
   },
   "dependencies": {
     "@gsap/react": "^2.1.0",
@@ -58,5 +58,8 @@
   "main": "index.js",
   "repository": "https://github.com/queekk-com/queekk-client.git",
   "author": "Vegetablegito247 <Yoshimitsu247Kakarot@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
 }

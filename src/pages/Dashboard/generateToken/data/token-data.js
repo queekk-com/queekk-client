@@ -1,4 +1,4 @@
-export default [
+const tokenData = [
     {
         _id: 1,
         tokenNumber: 'kygwdkgkewygkye',
@@ -11,4 +11,6 @@ export default [
         _id: 3,
         tokenNumber: 'lijslihldsnosriidmhb',
     },
-]
+];
+
+export default tokenData;

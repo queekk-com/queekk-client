@@ -1,4 +1,4 @@
-export default [
+const messagesData = [
     {
         id: 1,
         customerEmail: 'user1@example.com',
@@ -59,4 +59,6 @@ export default [
         time: '16:15pm',
         customerMsg: 'Duis auctor nunc vel nisi lobortis eleifend. Suspendisse potenti. Proin eleifend eros sed sapien feugiat tempus.'
     }
-]
+];
+
+export default messagesData;

@@ -1,15 +1,10 @@
 import React from 'react';
 import './organization.css';
 import logoImg from '../../../assets/svgs/logo.svg';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 function Organisations({ handleSideMenu }) {
-    const navigate = useNavigate();
-
-    const handlePath = () => {
-        navigate('/dashboard/organisation/orgForm')
-    }
 
     return (
         <div className='organisation'>
