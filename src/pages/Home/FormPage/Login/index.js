@@ -1,28 +1,26 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import formLogo from '../../../../assets/svgs/logo.svg';
 import '../form.css';
 import { toast } from "react-toastify";
-import { setUserData } from "../../../../redux/actions";
-import { useDispatch } from "react-redux";
+import { FiMail, FiLock, FiArrowRight } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 const Login = () => {
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const btnRef = useRef(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Queekk | Log in";
-    btnRef.current.disabled = loading || !email || !password;
-  }, [loading, email, password])
+  }, []);
 
   const formHandler = async (e) => {
     e.preventDefault();
     if (!email) return toast.error("Email is required");
     if (!password) return toast.error("Password is required");
+    
     try {
       setLoading(true);
       const response = await fetch(`${process.env.REACT_APP_SERVER}/auth/login`, {
@@ -47,42 +45,82 @@ const Login = () => {
   }
 
   return (
-    <div className='logIn form'>
-      <div className="formLogo" onClick={() => navigate("/")}>
-        <h1>QUEEKK</h1>
-        <img src={formLogo} alt="" />
-      </div>
-      <form onSubmit={formHandler} className='logCredentials'>
-        <div className="frmValue">
-          <div className="frmCtrl">
+    <div className='form-page'>
+      <motion.div 
+        className="auth-card"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
+        <div className="auth-header">
+          <div className="auth-logo" onClick={() => navigate("/")}>
+            <img src={formLogo} alt="Queekk Logo" />
+            <h1>Queekk<span>.</span></h1>
+          </div>
+          <h2>Welcome back</h2>
+          <p>Please enter your details to sign in.</p>
+        </div>
+
+        <form onSubmit={formHandler} className='auth-form'>
+          <div className="form-group">
             <label>Email</label>
-            <input
-              autoFocus
-              required
-              placeholder="queekk@example.com"
-              value={email}
-              onChange={e => setEmail(e.target.value)} 
-              type="email" />
+            <div className="input-wrapper">
+              <FiMail className="input-icon" />
+              <input
+                className="form-input"
+                autoFocus
+                required
+                placeholder="Enter your email"
+                value={email}
+                onChange={e => setEmail(e.target.value)} 
+                type="email" 
+              />
+            </div>
           </div>
-          <div className="frmCtrl">
+
+          <div className="form-group">
             <label>Password</label>
-            <input
-              required
-              value={password}
-              placeholder="********"
-              onChange={e => setPassword(e.target.value)} 
-              type="password" />
+            <div className="input-wrapper">
+              <FiLock className="input-icon" />
+              <input
+                className="form-input"
+                required
+                value={password}
+                placeholder="••••••••"
+                onChange={e => setPassword(e.target.value)} 
+                type="password" 
+              />
+            </div>
           </div>
+
+          <div className="form-options">
+            <label className="checkbox-wrapper">
+              <input type="checkbox" />
+              <span className="checkmark"></span>
+              Remember me
+            </label>
+            <Link to="#" className="forgot-password">Forgot password?</Link>
+          </div>
+
+          <button 
+            type="submit" 
+            className="submit-btn"
+            disabled={loading || !email || !password}
+          >
+            {loading ? <div className="spinner"></div> : (
+              <>
+                Sign in <FiArrowRight />
+              </>
+            )}
+          </button>
+        </form>
+
+        <div className="auth-footer">
+          Don't have an account? <Link to="/signup">Sign up</Link>
         </div>
-        <div className="frmBtn">
-          <button type="submit" ref={btnRef}>Log in</button>
-        </div>
-        <div className="frmAlready">
-          <span>Don't have an account yet ? <Link to={"/signup"}>click here to sign up</Link></span>
-        </div>
-      </form>
+      </motion.div>
     </div>
   )
 }
 
-export default Login
+export default Login;

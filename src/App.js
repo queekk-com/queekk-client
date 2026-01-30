@@ -28,6 +28,8 @@ import Usage from "./pages/Home/Documentation/Usage";
 import Customization from "./pages/Home/Documentation/Customization";
 import Troubleshooting from "./pages/Home/Documentation/Troubleshooting";
 import FAQs from "./pages/Home/Documentation/FAQs";
+import Features from "./pages/Home/Features";
+import Pricing from "./pages/Home/Pricing";
 
 export const ThemeContext = createContext(null);
 
@@ -67,6 +69,8 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="/" element={<Home />}>
               <Route index element={<LandingPage />} />
+              <Route path="features" element={<Features />} />
+              <Route path="pricing" element={<Pricing />} />
               <Route path="documentation" element={<Documentation />}>
                 <Route index element={<Introduction />} />
                 <Route path="introduction" element={<Introduction />} />

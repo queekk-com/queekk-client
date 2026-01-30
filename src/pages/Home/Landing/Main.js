@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import "./Main.css";
 import { motion } from "framer-motion";
-import {
-  FiZap,
-  FiShield,
-  FiGlobe,
-  FiCheck,
-  FiLayout,
-  FiCpu,
-} from "react-icons/fi";
+import { FiZap, FiShield, FiGlobe, FiCheck, FiLayout } from "react-icons/fi";
 
 const Main = () => {
   const [activeTab, setActiveTab] = useState("html");
