@@ -73,7 +73,7 @@ const Documentation = () => {
     return formattedLoc.charAt(0).toUpperCase() + formattedLoc.slice(1).replace("-", " ");
   };
 
-  const NavLinks = () => (
+  const NavLinks = ({ onClick }) => (
     <>
       {sections.map((section, index) => (
         <NavLink
@@ -83,6 +83,7 @@ const Documentation = () => {
             `doc-nav-item ${isActive || (section === "Introduction" && (location === "/documentation" || location === "/documentation/")) ? "active" : ""}`
           }
           end={section === "Introduction"}
+          onClick={onClick}
         >
           {section}
         </NavLink>
@@ -108,7 +109,7 @@ const Documentation = () => {
 
         {showMobileMenu && (
           <div className="doc-mobile-dropdown">
-            <NavLinks />
+            <NavLinks onClick={() => setShowMobileMenu(false)} />
           </div>
         )}
       </div>
