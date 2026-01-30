@@ -1,52 +1,70 @@
 footer {
     width: 100%;
     background-color: var(--secondaryColor);
-    margin-top: 4rem;
+    margin-top: 8rem;
+    border-top: 1px solid var(--dashColor);
 }
 
 .mainFoot {
     display: grid;
-    grid-template-columns: repeat(4, 3fr);
-    column-gap: 10px;
-    padding: 3rem 3rem 4rem;
-}
-
-.listCont, .lists {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .listCont {
-    row-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     width: 100%;
-    text-align: start;
 }
 
 .listHead h3 {
-    font-size: var(--lapHead3);
+    font-size: 1rem;
+    font-weight: 700;
     color: var(--txtColor);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
 }
 
 .lists {
-    row-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 .lists li {
     list-style: none;
-    display: flex;
-    align-items: center;
-    line-height: 30px;
 }
 
-.lists li a  {
+.lists li a {
     text-decoration: none;
-    color: var(--txtColor);
-    font-size: var(--lapParagraph1);
-    transition: .7s;
+    color: var(--txtSecondary);
+    font-size: 14px;
+    transition: all 0.2s ease;
 }
 
 .lists li a:hover {
     color: var(--accentColor);
+    transform: translateX(2px);
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .mainFoot {
+        grid-template-columns: 1fr 1fr;
+        padding: 4rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainFoot {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 }
 
 .bottomFoot {

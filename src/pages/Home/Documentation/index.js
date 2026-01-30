@@ -5,9 +5,9 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
-import Nav from "../../../components/Nav";
 import "./Documentation.css";
 import { useEffect, useState } from "react";
+import { FiMenu, FiX, FiBookOpen, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const Documentation = () => {
   const location = useLocation().pathname;
@@ -16,7 +16,7 @@ const Documentation = () => {
   const [next, setNext] = useState({ label: "", path: "" });
   const [formattedLoc, setFormattedLoc] = useState("");
 
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const sections = [
     "Introduction",
@@ -30,11 +30,14 @@ const Documentation = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Hide mobile menu on route change
+    setShowMobileMenu(false);
+
     let formattedLocation = location.replace(/\/documentation\/*/, "");
     if (formattedLocation.slice(-1) === "/") {
       formattedLocation = formattedLocation.slice(0, -1);
     }
-    console.log(formattedLocation);
+    
     setFormattedLoc(formattedLocation);
     if (formattedLocation === "introduction" || formattedLocation === "") {
       setPrev({ label: "Introduction", path: "" });
@@ -66,55 +69,74 @@ const Documentation = () => {
     }
   }, [location]);
 
-  return (
-    <div className="documentation">
-      <div className="documentation__nav">
-        <div
-          className="documentation__nav__container"
-          onClick={() => setShowMenu(!showMenu)}
+  const getCurrentTitle = () => {
+    if (formattedLoc === "" || formattedLoc === "/documentation") return "Introduction";
+    return formattedLoc.charAt(0).toUpperCase() + formattedLoc.slice(1).replace("-", " ");
+  };
+
+  const NavLinks = () => (
+    <>
+      {sections.map((section, index) => (
+        <NavLink
+          key={index}
+          to={`/documentation/${section.toLowerCase().replace(" ", "-")}`}
+          className={({ isActive }) => 
+            `doc-nav-item ${isActive || (section === "Introduction" && (location === "/documentation" || location === "/documentation/")) ? "active" : ""}`
+          }
+          end={section === "Introduction"}
         >
-          <div
-            className={`documentation__nav__container__links ${
-              showMenu ? "active" : ""
-            }`}
-          >
-            {sections.map((section, index) => {
-              return (
-                <NavLink
-                  key={index}
-                  to={`/documentation/${section
-                    .toLowerCase()
-                    .replace(" ", "-")}`}
-                  end
-                >
-                  {section}
-                </NavLink>
-              );
-            })}
+          {section}
+        </NavLink>
+      ))}
+    </>
+  );
+
+  return (
+    <div className="documentation-wrapper">
+      {/* Mobile Header */}
+      <div className="doc-mobile-header">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, color: 'var(--accentColor)' }}>
+          <FiBookOpen />
+          <span>Documentation</span>
+        </div>
+        <button 
+          className="doc-mobile-menu-btn"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+        >
+          {showMobileMenu ? <FiX /> : <FiMenu />}
+          <span>Menu</span>
+        </button>
+
+        {showMobileMenu && (
+          <div className="doc-mobile-dropdown">
+            <NavLinks />
           </div>
-        </div>
-        <div className="documentation__nav__container__title">
-          <small>
-            <Link
-              to={"/documentation"}
-              style={{ color: "#fff", textDecoration: "none" }}
-            >
-              documentation
-            </Link>{" "}
-            /{" "}
-            <span style={{ color: "var(--accentColor)" }}>
-              {formattedLoc === "" || formattedLoc === "/documentation"
-                ? "introduction"
-                : formattedLoc.charAt(0).toUpperCase() +
-                  formattedLoc.slice(1).replace("-", " ")}
-            </span>
-          </small>
-        </div>
+        )}
       </div>
-      <Outlet />
-      <div className="documentation__footer">
-        <div className="documentation__footer__nav">
-          {
+
+      {/* Sidebar (Desktop) */}
+      <aside className="doc-sidebar">
+        <div className="doc-sidebar-header">
+          <FiBookOpen />
+          <span>Documentation</span>
+        </div>
+        <nav className="doc-nav-list">
+          <NavLinks />
+        </nav>
+      </aside>
+
+      {/* Main Content */}
+      <main className="doc-content-area">
+        {/* Breadcrumb / Title Context */}
+        <div className="document-title-context" style={{ marginBottom: '1rem', color: '#666', fontSize: '0.9rem' }}>
+          Documentation / <span style={{ color: 'var(--accentColor)' }}>{getCurrentTitle()}</span>
+        </div>
+
+        <Outlet />
+
+        {/* Footer Navigation */}
+        <div className="documentation__footer">
+          <div className="documentation__footer__nav">
             <button
               className="documentation__footer__nav__prev"
               onClick={() => navigate(`/documentation/${prev.path}`)}
@@ -124,21 +146,28 @@ const Documentation = () => {
                   (formattedLoc === "introduction" || formattedLoc === ""))
               }
             >
-              {prev.label}
+              <FiChevronLeft />
+              <div style={{ textAlign: 'left' }}>
+                <span style={{ display: 'block', fontSize: '0.8rem', opacity: 0.7 }}>Previous</span>
+                {prev.label}
+              </div>
             </button>
-          }
-          {
+
             <button
               className="documentation__footer__nav__next"
               onClick={() => navigate(`/documentation/${next.path}`)}
               disabled={next.path === "" && next.label === "FAQs"}
             >
-              {next.label}
+              <div style={{ textAlign: 'right' }}>
+                <span style={{ display: 'block', fontSize: '0.8rem', opacity: 0.7 }}>Next</span>
+                {next.label}
+              </div>
+              <FiChevronRight />
             </button>
-          }
+          </div>
+          <small>Queekk © 2024. All rights reserved.</small>
         </div>
-        <small>Queekk © 2024. All rights reserved.</small>
-      </div>
+      </main>
     </div>
   );
 };

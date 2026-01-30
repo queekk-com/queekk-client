@@ -1,52 +1,62 @@
-import { useNavigate } from "react-router-dom";
-import headLogo from "../../../assets/svgs/logo.svg";
+import React from "react";
 import "./Head.css";
+import headLogo from "../../../assets/svgs/logo.svg";
 import { motion } from "framer-motion";
-// import Globe from "./components/Globe";
+import { FiArrowRight, FiPlay } from "react-icons/fi";
 
-function Header() {
-  const navigate = useNavigate();
-
+const Header = () => {
   return (
-    <div className="land__Head">
-      <motion.div
-        initial={{ rotateY: -100, opacity: 0 }}
-        transition={{ delay: .6, duration: 1, type: 'tween' }}
-        whileInView={{ rotateY: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        className="logo__container">
-        <img src={headLogo} alt="" />
-      </motion.div>
-      <motion.h1
-        initial={{ x: -100, opacity: 0 }}
-        transition={{ delay: .8, duration: 1, type: 'tween' }}
-        whileInView={{ x: 0, opacity: 1 }}
-        viewport={{ once: true }}
-      >
-        Quicker Support, Happier Customers,
-        <br />
-        Faster Growth
-      </motion.h1>
-      <motion.p
-        initial={{ x: 100, opacity: 0 }}
-        transition={{ delay: 1, duration: 1, type: 'tween' }}
-        whileInView={{ x: 0, opacity: 1 }}
-        viewport={{ once: true }}
-      >
-        In today's competitive landscape, every second counts. With{" "}
-        <span className="highlight">Queekk</span>, your support becomes
-        lightning-fast, delighting customers and fueling your business growth.
-      </motion.p>
-      <div className="headBtn">
-        <button onClick={() => navigate("/signup")}>Get started</button>
-        <button onClick={() => navigate("/documentation")}>
-          Documentation
-        </button>
+    <header className="land__Head">
+      {/* Background Elements */}
+      <img src={headLogo} alt="" className="floating-logo" />
+      <img src={headLogo} alt="" className="floating-logo" />
+
+      <div className="hero-content">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="pill-badge"
+        >
+          <span style={{ marginRight: "8px" }}>✨</span> New: AI-Powered
+          Insights
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          Instant Analytics for <br />
+          <span className="highlight">Modern Teams</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Stop guessing. Start knowing. Queekk provides real-time data
+          visualization and actionable insights to help you scale faster than
+          ever before.
+        </motion.p>
+
+        <motion.div
+          className="headBtn"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <button>
+            Get Started <FiArrowRight style={{ marginLeft: "8px" }} />
+          </button>
+          <button>
+            <FiPlay style={{ marginRight: "8px" }} /> Watch Demo
+          </button>
+        </motion.div>
       </div>
-      {/* GLOBE WAS COMMENTED DUE TO PERFORMANCE ISSUES */}
-      {/* <Globe /> */}
-    </div>
+    </header>
   );
-}
+};
 
 export default Header;

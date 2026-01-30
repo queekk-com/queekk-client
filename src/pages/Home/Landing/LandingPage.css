@@ -1,9 +1,14 @@
 .landing-page {
   display: flex;
   flex-flow: column;
-  gap: 24px;
+  gap: 0;
+  background-color: var(--primaryColor);
+  min-height: 100vh;
 }
 
 #queekk-container {
-  position: absolute;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
 }

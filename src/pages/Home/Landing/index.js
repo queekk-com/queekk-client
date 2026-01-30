@@ -6,13 +6,23 @@ import { useEffect } from "react";
 
 function LandingPage() {
   useEffect(() => {
+    const serverUrl = process.env.REACT_APP_SERVER;
+    const queekkKey = process.env.REACT_APP_QUEEKK_KEY;
+
+    if (!serverUrl || !queekkKey) {
+      console.warn(
+        "Queekk environment variables missing. Chat widget will not load.",
+      );
+      return;
+    }
+
     const link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = `${process.env.REACT_APP_SERVER}/assistant.css`;
+    link.href = `${serverUrl}/assistant.css`;
     document.head.appendChild(link);
 
     const script = document.createElement("script");
-    script.src = `${process.env.REACT_APP_SERVER}/assistant/${process.env.REACT_APP_QUEEKK_KEY}`;
+    script.src = `${serverUrl}/assistant/${queekkKey}`;
     script.async = true;
     document.head.appendChild(script);
 
