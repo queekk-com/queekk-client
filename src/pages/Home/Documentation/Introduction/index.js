@@ -5,7 +5,7 @@ const Introduction = () => {
     {
       id: 1,
       head: 'Instant Support',
-      text: 'ueekk offers real-time responses to user inquiries, reducing wait times and enhancing user satisfaction.'
+      text: 'Queekk offers real-time responses to user inquiries, reducing wait times and enhancing user satisfaction.'
     },
     {
       id: 2,
